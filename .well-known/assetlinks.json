@@ -3,6 +3,6 @@
   "target": {
     "namespace": "android_app",
     "package_name": "com.tronicbsb.marvelteamup",
-    "sha256_cert_fingerprints": ["E6:18:56:DE:7B:D1:32:3D:D2:68:C5:50:93:C0:19:3F:F9:1E:AE:A8:79:CF:D8:38:BC:3B:15:38:5C:3E:72:1C"]
+    "sha256_cert_fingerprints": ["8F:95:DE:B5:1C:F6:DE:39:FF:B3:31:5A:10:F1:76:AC:EC:89:FA:31:70:2A:44:05:DA:8E:7B:88:D6:11:15:35"]
   }
 }]
