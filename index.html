@@ -12,17 +12,17 @@
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#e11d48" />
+  <meta name="theme-color" content="#143b7d" />
   <meta name="mobile-web-app-capable" content="yes" />
-  <meta name="application-name" content="MTG Companion app fan - Team Up Coop" />
-  <meta name="apple-mobile-web-app-title" content="Team Up Coop" />
+  <meta name="application-name" content="Marvel Team-Up Coop Companion" />
+  <meta name="apple-mobile-web-app-title" content="Marvel Team-Up" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   
   <!-- SEO Meta Tags -->
-  <title>MTG Companion app fan - Team Up Coop</title>
-  <meta name="description" content="Companion fan app para partidas cooperativas de mesa, com controle de vida, bosses, cartas reveladas, lacaios em combate, log e galeria de cartas." />
-  <meta name="keywords" content="MTG companion fan app, tabletop companion, co-op card game, team up coop, boss deck companion" />
+  <title>Marvel Team-Up Coop Companion</title>
+  <meta name="description" content="Companion fan app Marvel para partidas cooperativas de mesa, com controle de vida, boss deck, cartas reveladas, lacaios em combate, log e galeria editavel de cartas." />
+  <meta name="keywords" content="Marvel team-up companion fan app, tabletop companion, co-op card game, boss deck companion, editable card gallery" />
   <link rel="icon" type="image/png" href="assets/images/logo.png" />
   <link rel="apple-touch-icon" href="assets/icons/icon-192.png" />
   <link rel="manifest" href="manifest.webmanifest" />
@@ -39,7 +39,7 @@
 
 /* ── CSS Custom Properties ── */
 :root {
-  /* Colors - Warm Pikachu/Kanto Palette */
+  /* Colors - Civil War Marvel Palette */
   --bg-primary: #111118;
   --bg-secondary: #16161f;
   --bg-card: #1c1c28;
@@ -47,16 +47,16 @@
   --bg-surface: #222230;
   --bg-input: #1e1e2a;
   
-  --accent-primary: #FFD700;     /* Pikachu Yellow / Gold */
-  --accent-secondary: #FF6B35;   /* Warm Orange */
-  --accent-tertiary: #DC2626;    /* Kanto Red */
+  --accent-primary: #2f8cff;     /* Captain America blue */
+  --accent-secondary: #d71920;   /* Iron Man red */
+  --accent-tertiary: #eef4ff;    /* Shield highlight */
   --accent-green: #22c55e;
-  --accent-orange: #ff9900;      /* Amazon Orange */
-  --accent-amber: #f59e0b;
+  --accent-orange: #4ea1ff;      /* Legacy alias */
+  --accent-amber: #ff4a55;
   
   /* Legacy aliases for compatibility */
-  --accent-cyan: #FFD700;
-  --accent-purple: #FF6B35;
+  --accent-cyan: #2f8cff;
+  --accent-purple: #d71920;
   --accent-pink: #ff6b9d;
   --accent-red: #DC2626;
   
@@ -66,13 +66,13 @@
   --text-white: #ffffff;
   
   --border-color: #2e2e3c;
-  --border-glow: rgba(255, 215, 0, 0.3);
+  --border-glow: rgba(47, 140, 255, 0.3);
   
   /* Gradients */
-  --gradient-hero: linear-gradient(135deg, #111118 0%, #1a1510 50%, #111118 100%);
-  --gradient-card: linear-gradient(145deg, #1c1c28 0%, #1e1c22 100%);
-  --gradient-accent: linear-gradient(135deg, #FFD700 0%, #FF6B35 100%);
-  --gradient-cta: linear-gradient(135deg, #ff9900 0%, #ffb84d 100%);
+  --gradient-hero: linear-gradient(135deg, #071022 0%, #12080d 55%, #070910 100%);
+  --gradient-card: linear-gradient(145deg, #0a1227 0%, #16080d 100%);
+  --gradient-accent: linear-gradient(135deg, #2f8cff 0%, #d71920 100%);
+  --gradient-cta: linear-gradient(135deg, #2f8cff 0%, #d71920 100%);
   --gradient-green: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
   
   /* Typography */
@@ -99,10 +99,10 @@
   
   /* Shadows */
   --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.4);
-  --shadow-card-hover: 0 8px 40px rgba(255, 215, 0, 0.12);
-  --shadow-glow-cyan: 0 0 20px rgba(255, 215, 0, 0.3);
-  --shadow-glow-purple: 0 0 20px rgba(255, 107, 53, 0.3);
-  --shadow-glow-orange: 0 0 20px rgba(255, 153, 0, 0.3);
+  --shadow-card-hover: 0 8px 40px rgba(47, 140, 255, 0.14);
+  --shadow-glow-cyan: 0 0 20px rgba(47, 140, 255, 0.3);
+  --shadow-glow-purple: 0 0 20px rgba(215, 25, 32, 0.3);
+  --shadow-glow-orange: 0 0 20px rgba(47, 140, 255, 0.3);
   
   /* Transitions */
   --transition-fast: 0.2s ease;
@@ -116,8 +116,8 @@
 
   /* ── Category Theme Variables ── */
   --cat-accent: var(--accent-primary);
-  --cat-accent-rgb: 255, 215, 0;
-  --cat-glow: rgba(255, 215, 0, 0.15);
+  --cat-accent-rgb: 47, 140, 255;
+  --cat-glow: rgba(47, 140, 255, 0.15);
 }
 
 /* ── Per-Category Themes ── */
@@ -132,11 +132,11 @@
 
 /* Legacy alias for old theme */
 .theme-tcg-pokemon {
-  --cat-accent: #FFD700;
-  --cat-accent-rgb: 255, 215, 0;
-  --cat-glow: rgba(255, 215, 0, 0.15);
-  --cat-gradient: linear-gradient(135deg, #FFD700 0%, #f59e0b 100%);
-  --cat-bg-tint: rgba(255, 215, 0, 0.04);
+  --cat-accent: #2f8cff;
+  --cat-accent-rgb: 47, 140, 255;
+  --cat-glow: rgba(47, 140, 255, 0.15);
+  --cat-gradient: linear-gradient(135deg, #2f8cff 0%, #ff4a55 100%);
+  --cat-bg-tint: rgba(47, 140, 255, 0.04);
 }
 
 /* Board Games: Royal Purple - Magic & Fantasy */
@@ -597,8 +597,8 @@ h4 { font-size: clamp(1rem, 2vw, 1.3rem); }
   right: 0;
   bottom: 0;
   background: 
-    radial-gradient(circle at 20% 50%, rgba(255, 215, 0, 0.07) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(255, 107, 53, 0.07) 0%, transparent 50%),
+    radial-gradient(circle at 20% 50%, rgba(47, 140, 255, 0.07) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(215, 25, 32, 0.07) 0%, transparent 50%),
     radial-gradient(circle at 50% 80%, rgba(220, 38, 38, 0.04) 0%, transparent 50%);
   pointer-events: none;
   z-index: 1;
@@ -613,8 +613,8 @@ h4 { font-size: clamp(1rem, 2vw, 1.3rem); }
   right: 0;
   bottom: 0;
   background-image: 
-    linear-gradient(rgba(255, 215, 0, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 215, 0, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(47, 140, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(47, 140, 255, 0.03) 1px, transparent 1px);
   background-size: 60px 60px;
   pointer-events: none;
   z-index: 0;
@@ -1674,8 +1674,8 @@ h4 { font-size: clamp(1rem, 2vw, 1.3rem); }
 }
 
 .affiliate-disclaimer {
-  background: rgba(255, 153, 0, 0.08);
-  border: 1px solid rgba(255, 153, 0, 0.2);
+  background: rgba(47, 140, 255, 0.08);
+  border: 1px solid rgba(47, 140, 255, 0.2);
   border-radius: var(--radius-md);
   padding: var(--space-md) var(--space-lg);
   font-size: 0.78rem;
@@ -2394,16 +2394,16 @@ h4 { font-size: clamp(1rem, 2vw, 1.3rem); }
 
 /* Amazon Style */
 .btn-platform.btn-amazon {
-  background: linear-gradient(135deg, #ff9900 0%, #ffb84d 100%);
-  border-color: #ff9900;
+  background: linear-gradient(135deg, #2f8cff 0%, #4ea1ff 100%);
+  border-color: #2f8cff;
   box-shadow: 0 4px 6px rgba(0,0,0,0.3);
   color: #111;
 }
 .btn-platform.btn-amazon:hover {
-  background: linear-gradient(135deg, #ffa31a 0%, #ffc266 100%);
-  border-color: #ffa31a;
+  background: linear-gradient(135deg, #4ea1ff 0%, #a7cfff 100%);
+  border-color: #4ea1ff;
   transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(255, 153, 0, 0.4);
+  box-shadow: 0 6px 15px rgba(47, 140, 255, 0.4);
 }
 .btn-platform.btn-amazon .btn-icon {
   color: #111;
@@ -2583,7 +2583,7 @@ h4 { font-size: clamp(1rem, 2vw, 1.3rem); }
 .form-group select:focus,
 .form-group textarea:focus {
   border-color: var(--accent-cyan);
-  box-shadow: 0 0 15px rgba(255, 215, 0, 0.15);
+  box-shadow: 0 0 15px rgba(47, 140, 255, 0.15);
   background: var(--bg-surface);
 }
 
@@ -2612,16 +2612,16 @@ h4 { font-size: clamp(1rem, 2vw, 1.3rem); }
 }
 
 /* ================================================================
-   Avatar: Invasão da Nação do Fogo (MTG Team-Up) — Stylesheet Premium
+   Marvel Super Heroes Team-Up — Stylesheet Premium
    ================================================================ */
 
 :root {
-  --fire-primary: #e11d48;
-  --fire-primary-rgb: 225, 29, 72;
-  --fire-gold: #eab308;
-  --fire-gold-rgb: 234, 179, 8;
-  --fire-dark: #0f0506;
-  --fire-card-bg: rgba(26, 12, 13, 0.8);
+  --fire-primary: #d71920;
+  --fire-primary-rgb: 215, 25, 32;
+  --fire-gold: #2f8cff;
+  --fire-gold-rgb: 47, 140, 255;
+  --fire-dark: #060b18;
+  --fire-card-bg: rgba(10, 18, 39, 0.84);
   
   --water-primary: #0ea5e9;
   --water-dark: #041d2d;
@@ -2641,8 +2641,8 @@ h4 { font-size: clamp(1rem, 2vw, 1.3rem); }
 .avatar-page {
   background-color: var(--fire-dark);
   background-image: 
-    radial-gradient(circle at 10% 20%, rgba(225, 29, 72, 0.05) 0%, transparent 40%),
-    radial-gradient(circle at 90% 80%, rgba(234, 179, 8, 0.05) 0%, transparent 40%);
+    radial-gradient(circle at 12% 18%, rgba(47, 140, 255, 0.12) 0%, transparent 38%),
+    radial-gradient(circle at 88% 74%, rgba(215, 25, 32, 0.12) 0%, transparent 42%);
   color: var(--text-white);
   padding-top: calc(var(--header-height) + var(--space-xl));
   min-height: 100vh;
@@ -2662,11 +2662,11 @@ h4 { font-size: clamp(1rem, 2vw, 1.3rem); }
   letter-spacing: -1px;
   margin-bottom: var(--space-md);
   text-transform: uppercase;
-  background: linear-gradient(135deg, #ff7e5f 0%, #feb47b 50%, #e11d48 100%);
+  background: linear-gradient(135deg, #2f8cff 0%, #eef4ff 48%, #d71920 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  filter: drop-shadow(0 2px 10px rgba(225, 29, 72, 0.3));
+  filter: drop-shadow(0 2px 10px rgba(47, 140, 255, 0.28));
 }
 
 .avatar-hero p {
@@ -2999,7 +2999,7 @@ h4 { font-size: clamp(1rem, 2vw, 1.3rem); }
   font-weight: bold;
 }
 
-.mana-circle.red { background: #f97316; color: #fff; }
+.mana-circle.red { background: #d71920; color: #fff; }
 .mana-circle.white { background: #fef08a; color: #000; }
 .mana-circle.blue { background: #3b82f6; color: #fff; }
 
@@ -3018,7 +3018,7 @@ h4 { font-size: clamp(1rem, 2vw, 1.3rem); }
 }
 
 /* Standard art styles when no custom art is loaded */
-.art-fire { background: linear-gradient(45deg, #b91c1c, #f97316); }
+.art-fire { background: linear-gradient(45deg, #b91c1c, #d71920); }
 .art-water { background: linear-gradient(45deg, #0369a1, #38bdf8); }
 .art-earth { background: linear-gradient(45deg, #047857, #34d399); }
 .art-spirit { background: linear-gradient(45deg, #6d28d9, #a78bfa); }
@@ -3679,8 +3679,8 @@ aside .setup-group span {
 
   .icon-btn:hover,
   .icon-btn:focus-visible {
-    color: #ff4b12;
-    background: rgba(255, 75, 18, 0.08);
+    color: #4ea1ff;
+    background: rgba(47, 140, 255, 0.08);
     outline: none;
   }
 
@@ -3724,19 +3724,19 @@ aside .setup-group span {
     font-size: clamp(3.5rem, 18vw, 5.4rem);
     line-height: 0.88;
     letter-spacing: 0;
-    color: #ff4b12;
+    color: #4ea1ff;
   }
 
   .home-title span {
     display: block;
-    color: #ff9b2f;
+    color: #ff4a55;
   }
 
   .home-rule {
     width: 74px;
     height: 2px;
     margin: 26px auto 18px;
-    background: #ff4b12;
+    background: #4ea1ff;
   }
 
   .home-subtitle {
@@ -3769,7 +3769,7 @@ aside .setup-group span {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid rgba(255, 85, 44, 0.26);
+    border: 1px solid rgba(47, 140, 255, 0.26);
     border-radius: 8px;
     background: rgba(74, 13, 13, 0.58);
     color: #f5c8b4;
@@ -3778,8 +3778,8 @@ aside .setup-group span {
 
   .player-card:hover,
   .player-card:focus-visible {
-    border-color: #ff4b12;
-    box-shadow: 0 0 0 2px rgba(255, 75, 18, 0.18);
+    border-color: #4ea1ff;
+    box-shadow: 0 0 0 2px rgba(47, 140, 255, 0.18);
     outline: none;
   }
 
@@ -3787,7 +3787,7 @@ aside .setup-group span {
     font-family: var(--font-heading);
     font-size: 2.4rem;
     line-height: 1;
-    color: #ff4b12;
+    color: #4ea1ff;
   }
 
   .player-label {
@@ -3810,7 +3810,7 @@ aside .setup-group span {
 
   .wide-action {
     min-height: 56px;
-    border: 1px solid rgba(255, 92, 44, 0.36);
+    border: 1px solid rgba(47, 140, 255, 0.36);
     border-radius: 8px;
     background: rgba(54, 7, 7, 0.72);
     color: #e6ad97;
@@ -3828,7 +3828,7 @@ aside .setup-group span {
   .seg-btn {
     min-width: 68px;
     height: 40px;
-    border: 1px solid rgba(255, 92, 44, 0.28);
+    border: 1px solid rgba(47, 140, 255, 0.28);
     border-radius: 8px;
     background: rgba(44, 6, 6, 0.76);
     color: #c9907c;
@@ -3837,9 +3837,9 @@ aside .setup-group span {
   }
 
   .seg-btn.active {
-    border-color: #ff4b12;
+    border-color: #4ea1ff;
     color: #160201;
-    background: #ff4b12;
+    background: #4ea1ff;
   }
 
   .game-summary {
@@ -3864,7 +3864,7 @@ aside .setup-group span {
   }
 
   .life-panel.bosses .life-label {
-    color: #ff4b12;
+    color: #4ea1ff;
   }
 
   .life-value-mobile {
@@ -3876,7 +3876,7 @@ aside .setup-group span {
   }
 
   .life-panel.bosses .life-value-mobile {
-    color: #ff4b12;
+    color: #4ea1ff;
   }
 
   .life-actions {
@@ -3889,7 +3889,7 @@ aside .setup-group span {
   .life-actions button {
     min-width: 0;
     height: 25px;
-    border: 1px solid rgba(255, 92, 44, 0.24);
+    border: 1px solid rgba(47, 140, 255, 0.24);
     border-radius: 4px;
     background: rgba(52, 7, 7, 0.72);
     color: #ffd0ba;
@@ -3914,7 +3914,7 @@ aside .setup-group span {
 
   .mini-stat {
     padding: 8px 6px;
-    border: 1px solid rgba(255, 92, 44, 0.16);
+    border: 1px solid rgba(47, 140, 255, 0.16);
     border-radius: 8px;
     background: rgba(45, 6, 6, 0.62);
     text-align: center;
@@ -3962,7 +3962,7 @@ aside .setup-group span {
   .compact-card {
     min-width: 106px;
     max-width: 126px;
-    border: 1px solid rgba(255, 92, 44, 0.26);
+    border: 1px solid rgba(47, 140, 255, 0.26);
     border-radius: 8px;
     background: rgba(54, 7, 7, 0.74);
     cursor: pointer;
@@ -4035,9 +4035,9 @@ aside .setup-group span {
     width: 100%;
     height: 30px;
     margin-top: 8px;
-    border: 1px solid rgba(255, 92, 44, 0.28);
+    border: 1px solid rgba(47, 140, 255, 0.28);
     border-radius: 6px;
-    background: rgba(255, 75, 18, 0.14);
+    background: rgba(47, 140, 255, 0.14);
     color: #ffb296;
     font-size: 0.72rem;
     font-weight: 900;
@@ -4061,7 +4061,7 @@ aside .setup-group span {
   }
 
   .tab-bar button.active {
-    border-bottom-color: #ff4b12;
+    border-bottom-color: #4ea1ff;
     color: #fff0e6;
   }
 
@@ -4101,7 +4101,7 @@ aside .setup-group span {
     margin: 0 auto;
     border: 0;
     border-radius: 8px;
-    background: #ff4b12;
+    background: #4ea1ff;
     color: #160201;
     font-family: var(--font-heading);
     font-size: 1rem;
@@ -4119,7 +4119,7 @@ aside .setup-group span {
     width: 100%;
     height: 56px;
     padding: 0 16px;
-    border: 1px solid rgba(255, 92, 44, 0.24);
+    border: 1px solid rgba(47, 140, 255, 0.24);
     border-radius: 8px;
     background: rgba(55, 7, 7, 0.72);
     color: #fff0e6;
@@ -4141,7 +4141,7 @@ aside .setup-group span {
   .filter-row button {
     height: 40px;
     padding: 0 16px;
-    border: 1px solid rgba(255, 92, 44, 0.28);
+    border: 1px solid rgba(47, 140, 255, 0.28);
     border-radius: 8px;
     background: rgba(24, 2, 2, 0.82);
     color: #e0a08a;
@@ -4151,8 +4151,8 @@ aside .setup-group span {
   }
 
   .filter-row button.active {
-    border-color: #ff4b12;
-    color: #ff4b12;
+    border-color: #4ea1ff;
+    color: #4ea1ff;
   }
 
   .gallery-list {
@@ -4233,7 +4233,7 @@ aside .setup-group span {
   }
 
   .gallery-list-card {
-    border: 1px solid rgba(255, 92, 44, 0.2);
+    border: 1px solid rgba(47, 140, 255, 0.2);
     border-radius: 8px;
     background: rgba(56, 8, 8, 0.74);
     overflow: hidden;
@@ -4260,8 +4260,8 @@ aside .setup-group span {
     display: grid;
     place-items: center;
     border-radius: 8px;
-    background: rgba(255, 75, 18, 0.12);
-    color: #ff4b12;
+    background: rgba(47, 140, 255, 0.12);
+    color: #4ea1ff;
     font-size: 1.35rem;
   }
 
@@ -4280,7 +4280,7 @@ aside .setup-group span {
   }
 
   .gallery-pt {
-    color: #ff4b12;
+    color: #4ea1ff;
     font-family: var(--font-heading);
     font-weight: 900;
   }
@@ -4305,7 +4305,7 @@ aside .setup-group span {
   .detail-actions button {
     min-height: 38px;
     padding: 0 14px;
-    border: 1px solid rgba(255, 92, 44, 0.28);
+    border: 1px solid rgba(47, 140, 255, 0.28);
     border-radius: 8px;
     background: rgba(20, 2, 2, 0.72);
     color: #ffb296;
@@ -4323,8 +4323,8 @@ aside .setup-group span {
     .mobile-screen {
       width: min(100%, 760px);
       margin: 0 auto;
-      border-left: 1px solid rgba(255, 92, 44, 0.12);
-      border-right: 1px solid rgba(255, 92, 44, 0.12);
+      border-left: 1px solid rgba(47, 140, 255, 0.12);
+      border-right: 1px solid rgba(47, 140, 255, 0.12);
     }
 
     .mobile-gallery-grid {
@@ -4332,6 +4332,156 @@ aside .setup-group span {
       --card-height: 238px;
     }
   }
+
+/* Civil War visual identity overrides */
+.mobile-app-shell {
+  background:
+    radial-gradient(circle at 18% 16%, rgba(47, 140, 255, 0.18), transparent 34%),
+    radial-gradient(circle at 84% 12%, rgba(215, 25, 32, 0.16), transparent 32%),
+    linear-gradient(180deg, #071022 0%, #12080d 58%, #070910 100%);
+}
+
+.app-topbar,
+.game-summary,
+.panel-block,
+.tab-bar {
+  border-color: rgba(47, 140, 255, 0.2);
+}
+
+.brand-mark,
+.home-title,
+.home-kicker,
+.nav-card-title,
+.nav-card .nav-icon,
+.filter-row button.active,
+.gallery-pt,
+.panel-heading,
+.tab-bar button.active,
+.compact-defeat,
+.detail-actions button {
+  color: #4ea1ff;
+}
+
+.home-title span,
+.life-panel.bosses .life-label,
+.life-panel.bosses .life-value-mobile {
+  color: #ff4a55;
+}
+
+.home-title {
+  color: #4ea1ff !important;
+  text-shadow: 0 0 24px rgba(47, 140, 255, 0.24);
+}
+
+.home-title span {
+  color: #ff4a55 !important;
+  text-shadow: 0 0 24px rgba(215, 25, 32, 0.24);
+}
+
+.home-rule {
+  background: linear-gradient(90deg, #2f8cff 0%, #eef4ff 50%, #d71920 100%) !important;
+}
+
+.home-subtitle {
+  color: #c9d8ef !important;
+}
+
+.section-label {
+  color: #8fb6e8 !important;
+}
+
+.wide-action,
+.nav-card,
+.player-card,
+.seg-btn,
+.life-actions button,
+.mini-stat,
+.compact-card,
+.compact-defeat,
+.gallery-search,
+.filter-row button,
+.gallery-list-card,
+.detail-actions button {
+  border-color: rgba(47, 140, 255, 0.28);
+  background: rgba(6, 15, 35, 0.72);
+}
+
+.player-card:hover,
+.player-card:focus-visible {
+  border-color: #4ea1ff !important;
+  box-shadow: 0 0 0 2px rgba(47, 140, 255, 0.18) !important;
+}
+
+.player-card:nth-child(1) .player-number {
+  color: #4ea1ff !important;
+}
+
+.player-card:nth-child(2) .player-number {
+  color: #eef4ff !important;
+}
+
+.player-card:nth-child(3) .player-number {
+  color: #ff4a55 !important;
+}
+
+.player-label {
+  color: #eef4ff !important;
+}
+
+.player-stats {
+  color: #8fb6e8 !important;
+}
+
+.nav-card-subtitle,
+.mini-stat span,
+.compact-card-meta,
+.gallery-card-type,
+.gallery-card-detail,
+.log-list,
+.empty-state,
+.versus-stack {
+  color: #8fb6e8;
+}
+
+.compact-card-name,
+.gallery-card-name,
+.gallery-search,
+.tab-bar button.active {
+  color: #eef4ff;
+}
+
+.seg-btn.active,
+.next-turn-btn {
+  background: linear-gradient(135deg, #2f8cff 0%, #d71920 100%);
+  color: #ffffff;
+}
+
+.filter-row button.active,
+.tab-bar button.active {
+  border-color: #4ea1ff;
+}
+
+.gallery-type-icon {
+  background: rgba(47, 140, 255, 0.14);
+  color: #4ea1ff;
+}
+
+.bottom-action {
+  background: linear-gradient(180deg, rgba(7, 16, 34, 0), #070910 30%);
+}
+
+@media (min-width: 760px) {
+  .mobile-app-shell {
+    background:
+      linear-gradient(90deg, rgba(7, 16, 34, 0.94), rgba(18, 8, 13, 0.76)),
+      #070910;
+  }
+
+  .mobile-screen {
+    border-left-color: rgba(47, 140, 255, 0.16);
+    border-right-color: rgba(215, 25, 32, 0.14);
+  }
+}
   </style>
   
   <!-- Fonts -->
@@ -4352,9 +4502,9 @@ aside .setup-group span {
         <button class="lang-btn" data-lang="pt" onclick="switchLanguage('pt')" style="background:rgba(0,0,0,0.5); border:1px solid rgba(255,255,255,0.2); color:#fff; cursor:pointer; padding:4px 12px; border-radius:4px; font-family:var(--font-heading); font-size: 0.8rem; font-weight: bold; text-transform: uppercase;">PT-BR</button>
       </div>
       <div class="container">
-        <h1>MTG Companion app fan - Team Up Coop</h1>
+        <h1>Marvel Team-Up Coop Companion</h1>
         <p>
-          <span>Fan-made companion app for tabletop co-op matches, with life tracking, boss deck flow, revealed cards and a card gallery.</span>
+          <span>Fan-made companion app for tabletop co-op matches, with life tracking, villain deck flow, revealed cards and an editable card gallery.</span>
         </p>
       </div>
     </section>
@@ -4464,7 +4614,7 @@ aside .setup-group span {
 
           <!-- Fase de Ação Automática do Boss -->
           <div style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: var(--space-lg);">
-            <h3 style="font-family: var(--font-heading); color: var(--fire-gold); margin-bottom: 6px; font-size: 1.15rem; text-transform: uppercase;">🔥 <span data-i18n="fire_nation_action_phase">FIRE NATION ACTION PHASE</span></h3>
+            <h3 style="font-family: var(--font-heading); color: var(--fire-gold); margin-bottom: 6px; font-size: 1.15rem; text-transform: uppercase;">🔥 <span data-i18n="fire_nation_action_phase">VILLAIN ACTION PHASE</span></h3>
             <p style="color: var(--text-muted); font-size: 0.78rem; margin-bottom: var(--space-md);">
               <span data-i18n="action_phase_desc">By clicking <strong style='color: var(--fire-gold);'>Next Turn</strong>, the bosses automatically play <strong id='cards-per-turn-label'>2</strong> cards from the Event Deck in order. Minions enter the battlefield; tactics are resolved and discarded.</span>
             </p>
@@ -4494,7 +4644,7 @@ aside .setup-group span {
           <!-- Lacaio e Campo de Criaturas Inimigas -->
           <div class="battlefield-panel" style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: var(--space-lg);">
             <h3 style="font-family: var(--font-heading); color: var(--earth-primary); margin-bottom: 6px; font-size: 1.15rem; text-transform: uppercase;">⚔️ <span data-i18n="enemy_battlefield">ENEMY BATTLEFIELD (MINIONS)</span></h3>
-            <p style="color: var(--text-muted); font-size: 0.78rem; margin-bottom: var(--space-md);"><span data-i18n="enemy_battlefield_desc">Fire Nation creatures in active combat. They attack the heroes every turn if possible.</span></p>
+            <p style="color: var(--text-muted); font-size: 0.78rem; margin-bottom: var(--space-md);"><span data-i18n="enemy_battlefield_desc">Marvel villain minions in active combat. They attack the heroes every turn if possible.</span></p>
             <div class="battlefield-cards-row" id="battlefield-container">
               <!-- Renderizado dinamicamente via JS -->
             </div>
@@ -4655,7 +4805,7 @@ aside .setup-group span {
   </div>
 
   <!-- Scripts -->
-  <script src="./avatar-team-up.js?v=260612"></script>
+  <script src="./marvel-team-up.js?v=260611-artfix1"></script>
   <script>
     if ("serviceWorker" in navigator) {
       window.addEventListener("load", () => {

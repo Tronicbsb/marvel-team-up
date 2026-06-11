@@ -1,12 +1,12 @@
 /* ================================================================
-   Avatar: Invasão da Nação do Fogo (MTG Team-Up) — Engine & Banco de Dados
+   Marvel Super Heroes Team-Up — Engine & Banco de Dados
    ================================================================ */
 
 
 // ── SISTEMA DE INTERNACIONALIZAÇÃO (I18N) ──
 let currentLang = 'en';
 try {
-  currentLang = localStorage.getItem('avatar_lang') || 'en';
+  currentLang = localStorage.getItem('marvel_lang') || 'en';
 } catch(e) {}
 
 const I18N = {
@@ -14,13 +14,13 @@ const I18N = {
     "nav_hero_rules": "Hero Rules",
     "nav_gallery": "Card Gallery",
     "nav_companion": "Companion Engine",
-    "hero_badge": "Avatar MTG Co-op Companion",
-    "hero_title": "Fire Nation <span class='gradient-text'>Invasion</span>",
-    "hero_desc": "Interactive companion app for Magic: The Gathering cooperative mode. Face the Fire Nation with your friends or play solo in this premium adaptation based on the official cooperative rules.",
+    "hero_badge": "Marvel MTG Co-op Companion",
+    "hero_title": "Marvel Super Heroes <span class='gradient-text'>Team-Up</span>",
+    "hero_desc": "Interactive companion app for Magic: The Gathering cooperative mode. Face a multiverse of Marvel villains with your friends or play solo in this premium fan adaptation based on the cooperative rules.",
     "btn_rules": "How to Play",
     "btn_companion": "Start Game",
     "gallery_title": "Card Gallery",
-    "gallery_desc": "Explore all custom cards from the Fire Nation deck.",
+    "gallery_desc": "Explore all custom cards from the Marvel villain deck.",
     "tab_all": "Show All",
     "tab_bosses": "Enemy Bosses (11)",
     "tab_tactics": "Boss Tactics (11)",
@@ -57,14 +57,14 @@ const I18N = {
     "btn_next": "End Turn",
     "log_title": "Action Log",
     "active_bosses": "ACTIVE STAGE BOSSES",
-    "active_bosses_desc": "These are the elite benders currently leading the assault.",
-    "fire_nation_action_phase": "FIRE NATION ACTION PHASE",
+    "active_bosses_desc": "These are the elite villains currently leading the assault.",
+    "fire_nation_action_phase": "VILLAIN ACTION PHASE",
     "action_phase_desc": "By clicking <strong style='color: var(--fire-gold);'>Next Turn</strong>, the bosses automatically play <strong id='cards-per-turn-label'>2</strong> cards from the Event Deck in order. Minions enter the battlefield; tactics are resolved and discarded.",
     "cards_left_label": "Left",
     "event_deck_label": "Event Deck",
     "actions_revealed_turn": "ACTIONS REVEALED THIS TURN:",
     "enemy_battlefield": "ENEMY BATTLEFIELD (MINIONS)",
-    "enemy_battlefield_desc": "Fire Nation creatures in active combat. They attack the heroes every turn if possible.",
+    "enemy_battlefield_desc": "Marvel villain minions in active combat. They attack the heroes every turn if possible.",
     "cemetery_discard": "GRAVEYARD & DISCARDS",
     "cemetery_desc": "History of resolved tactics and defeated minions. Hover to focus or click to view/edit.",
     "battle_log": "BATTLE LOG (CONSOLE)",
@@ -85,7 +85,7 @@ const I18N = {
     "guide_stage_dist": "<strong>Distribution by Stage:</strong>",
     "guide_stage_dist_1": "2 or 3 Players (6 Bosses total): Stage 1 = 1 Boss, Stage 2 = 2 Bosses, Stage 3 = 3 Bosses.",
     "guide_stage_dist_2": "4 Players (10 Bosses total): Stage 1 = 2 Bosses, Stage 2 = 3 Bosses, Stage 3 = 5 Bosses.",
-    "footer_text": "Not affiliated with Wizards of the Coast or Nickelodeon. Created for the MTG community.",
+    "footer_text": "Not affiliated with Wizards of the Coast or Marvel. Created for the MTG community.",
     "modal_edit_art": "Edit Art & Text",
     "modal_reset_art": "Reset",
     "modal_close": "Close",
@@ -102,13 +102,13 @@ const I18N = {
     "nav_hero_rules": "Regras dos Heróis",
     "nav_gallery": "Galeria de Cartas",
     "nav_companion": "Motor Companion",
-    "hero_badge": "Avatar MTG Co-op Companion",
-    "hero_title": "Invasão da <span class='gradient-text'>Nação do Fogo</span>",
-    "hero_desc": "Aplicativo companion interativo para o modo cooperativo de Magic: The Gathering. Enfrente a Nação do Fogo com seus amigos ou jogue solo nesta adaptação premium baseada nas regras cooperativas oficiais.",
+    "hero_badge": "Marvel MTG Co-op Companion",
+    "hero_title": "Marvel Super Heroes <span class='gradient-text'>Team-Up</span>",
+    "hero_desc": "Aplicativo companion interativo para o modo cooperativo de Magic: The Gathering. Enfrente viloes Marvel multiversais com seus amigos ou jogue solo nesta adaptacao fan premium baseada nas regras cooperativas oficiais.",
     "btn_rules": "Como Jogar",
     "btn_companion": "Iniciar Partida",
     "gallery_title": "Galeria de Cartas",
-    "gallery_desc": "Explore todas as cartas customizadas do baralho da Nação do Fogo.",
+    "gallery_desc": "Explore todas as cartas customizadas do baralho de viloes Marvel.",
     "tab_all": "Todas",
     "tab_bosses": "Chefes Inimigos (11)",
     "tab_tactics": "Táticas dos Chefes (11)",
@@ -145,14 +145,14 @@ const I18N = {
     "btn_next": "Encerrar Turno",
     "log_title": "Registro de Ações",
     "active_bosses": "CHEFES ATIVOS",
-    "active_bosses_desc": "Estes são os dobradores de elite que lideram o ataque atualmente.",
-    "fire_nation_action_phase": "FASE DE AÇÃO DA NAÇÃO DO FOGO",
+    "active_bosses_desc": "Estes são os viloes de elite que lideram o ataque atualmente.",
+    "fire_nation_action_phase": "FASE DE ACAO DOS VILOES",
     "action_phase_desc": "Ao clicar em <strong style='color: var(--fire-gold);'>Próximo Turno</strong>, os chefes jogam automaticamente <strong id='cards-per-turn-label'>2</strong> cartas do Event Deck em ordem. Lacaios entram no campo de batalha; táticas são resolvidas e descartadas.",
     "cards_left_label": "Restantes",
     "event_deck_label": "Event Deck",
     "actions_revealed_turn": "AÇÕES REVELADAS NESTE TURNO:",
     "enemy_battlefield": "CAMPO DE BATALHA INIMIGO (LACAIOS)",
-    "enemy_battlefield_desc": "Criaturas da Nação do Fogo em combate ativo. Elas atacam os heróis a cada turno, se possível.",
+    "enemy_battlefield_desc": "Lacaios de viloes Marvel em combate ativo. Elas atacam os heróis a cada turno, se possível.",
     "cemetery_discard": "CEMITÉRIO E DESCARTES",
     "cemetery_desc": "Histórico de táticas resolvidas e lacaios derrotados. Passe o mouse para focar ou clique para ver/editar.",
     "battle_log": "REGISTRO DE BATALHA (CONSOLE)",
@@ -173,7 +173,7 @@ const I18N = {
     "guide_stage_dist": "<strong>Distribuição por Estágio:</strong>",
     "guide_stage_dist_1": "2 ou 3 Jogadores (6 Chefes no total): Estágio 1 = 1 Chefe, Estágio 2 = 2 Chefes, Estágio 3 = 3 Chefes.",
     "guide_stage_dist_2": "4 Jogadores (10 Chefes no total): Estágio 1 = 2 Chefes, Estágio 2 = 3 Chefes, Estágio 3 = 5 Chefes.",
-    "footer_text": "Não afiliado com Wizards of the Coast ou Nickelodeon. Criado para a comunidade de MTG.",
+    "footer_text": "Nao afiliado com Wizards of the Coast ou Marvel. Criado para a comunidade de MTG.",
     "modal_edit_art": "Editar Arte e Texto",
     "modal_reset_art": "Restaurar",
     "modal_close": "Fechar",
@@ -191,7 +191,7 @@ const I18N = {
 function switchLanguage(lang) {
   currentLang = lang;
   try {
-    localStorage.setItem('avatar_lang', lang);
+    localStorage.setItem('marvel_lang', lang);
   } catch(e) {}
   
   applyTranslations();
@@ -223,449 +223,456 @@ function applyTranslations() {
 }
 
 
-// ── BANCO DE DADOS DAS CARTAS (Mapeamento Oficial de TMNT -> Avatar TLA) ──
+// -- BANCO DE DADOS DAS CARTAS (Marvel Super Heroes Team-Up) --
 
 const CARD_DATABASE = {
   bosses: [
     {
       id: "combustion_man",
       originalName: "Baxter, Exzzperimental Zzientist",
-      name: "Homem Combustão",
+      name: "Arnim Zola, Bio-Fanatic",
       element: "fire",
-      type: "Chefe Lendário — Dobrador de Fogo",
-      rules: "Criaturas chamadas Soldado da Nação do Fogo que os chefes controlam têm voar.",
-      flavor: "Um mercenário silencioso que usa sua mente para disparar rajadas explosivas mortais.",
+      type: "Chefe Lendario - Cientista da Hydra",
+      rules: "Criaturas chamadas HYDRA Troopers que os chefes controlam tem voar.",
+      flavor: "A ciencia de Zola transforma soldados descartaveis em armas biologicas obedientes.",
       pt: "4/4",
-      artDefault: "🔥"
-    ,
-      nameEn: "Combustion Man",
-      typeEn: "Legendary Boss — Firebender",
-      rulesEn: `Creatures named Fire Nation Soldier the bosses control have flying.`,
-      flavorEn: "A silent mercenary who uses his mind to fire deadly explosive blasts."},
+      artDefault: "Z",
+      nameEn: "Arnim Zola, Bio-Fanatic",
+      typeEn: "Legendary Boss - Hydra Scientist",
+      rulesEn: `Creatures named HYDRA Troopers the bosses control have flying.`,
+      flavorEn: "Zola's science turns disposable soldiers into obedient biological weapons."
+    },
     {
       id: "zuko",
       originalName: "Bebop, Porcine Punk",
-      name: "Príncipe Zuko",
-      element: "fire",
-      type: "Chefe Lendário — Dobrador de Fogo",
-      rules: "Sempre que os chefes atacarem, coloque um marcador +1/+1 em cada criatura chamada Soldado da Nação do Fogo.",
-      flavor: "A determinação incansável de capturar o Avatar alimenta sua agressividade em combate.",
+      name: "Bullseye, Death Dealer",
+      element: "earth",
+      type: "Chefe Lendario - Deus da Trapaça",
+      rules: "Sempre que os chefes atacarem, coloque um marcador +1/+1 em cada criatura chamada HYDRA Troopers.",
+      type: "Chefe Lendario - Mercenario Assassino",
+      flavor: "Ele ri no meio do caos, e cada agente da Hydra aprende a mirar onde mais doi.",
       pt: "3/5",
-      artDefault: "⚔️"
-    ,
-      nameEn: "Prince Zuko",
-      typeEn: "Legendary Boss — Firebender",
-      rulesEn: `Whenever the bosses attack, put a +1/+1 counter on each creature named Fire Nation Soldier.`,
-      flavorEn: "His relentless determination to capture the Avatar fuels his aggression in combat."},
+      artDefault: "B",
+      nameEn: "Bullseye, Death Dealer",
+      typeEn: "Legendary Boss - Assassin Mercenary",
+      rulesEn: `Whenever the bosses attack, put a +1/+1 counter on each creature named HYDRA Troopers.`,
+      flavorEn: "He laughs in the chaos, and every Hydra agent learns where to aim for pain."
+    },
     {
       id: "ty_lee",
       originalName: "Chrome Dome, Cyber-Ninja",
-      name: "Ty Lee",
-      element: "fire",
-      type: "Chefe Lendário — Acrobata",
-      rules: "Soldados que os chefes controlam recebem +1/+0 para cada chefe em jogo.",
-      flavor: "Com agilidade incomparável, seus golpes bloqueiam o fluxo de chi de qualquer adversário.",
+      name: "Winter Soldier, Icy Assassin",
+      element: "water",
+      type: "Chefe Lendario - Mercenario",
+      rules: "Lacaios que os chefes controlam recebem +1/+0 para cada chefe em jogo.",
+      type: "Chefe Lendario - Arma Cibernetica",
+      flavor: "Condicionado pela Hydra, ele transforma disciplina militar em forca letal.",
       pt: "2/6",
-      artDefault: "🤸"
-    ,
-      nameEn: "Ty Lee",
-      typeEn: "Legendary Boss — Acrobat",
-      rulesEn: `Soldiers the bosses control get +1/+0 for each boss on the battlefield.`,
-      flavorEn: "With unparalleled agility, her strikes block the chi flow of any adversary."},
+      artDefault: "W",
+      nameEn: "Winter Soldier, Icy Assassin",
+      typeEn: "Legendary Boss - Cybernetic Weapon",
+      rulesEn: `Minions the bosses control get +1/+0 for each boss on the battlefield.`,
+      flavorEn: "Conditioned by Hydra, he turns military discipline into lethal force."
+    },
     {
       id: "azula",
       originalName: "Karai, Shadow Warrior",
-      name: "Princesa Azula",
+      name: "Madame Hydra",
       element: "fire",
-      type: "Chefe Lendário — Dobradora de Fogo",
-      rules: "Sempre que uma criatura que os heróis controlam morrer, os heróis perdem 1 ponto de vida.",
-      flavor: "Cruel, calculista e uma prodígio das chamas azuis e eletricidade.",
+      type: "Chefe Lendario - Deusa da Morte",
+      rules: "Sempre que uma criatura que os herois controlam morrer, os herois perdem 1 ponto de vida.",
+      type: "Chefe Lendario - Comandante da Hydra",
+      flavor: "Ela comanda celulas secretas com uma frieza que transforma perdas em propaganda.",
       pt: "4/4",
-      artDefault: "⚡"
-    ,
-      nameEn: "Princess Azula",
-      typeEn: "Legendary Boss — Firebender",
+      artDefault: "H",
+      nameEn: "Madame Hydra",
+      typeEn: "Legendary Boss - Hydra Commander",
       rulesEn: `Whenever a creature the heroes control dies, the heroes lose 1 life.`,
-      flavorEn: "Cruel, calculating, and a prodigy of blue flames and electricity."},
+      flavorEn: "She commands secret cells with a chill that turns every loss into propaganda."
+    },
     {
       id: "zhao",
       originalName: "Krang, Dimension X Overlord",
-      name: "Almirante Zhao",
-      element: "fire",
-      type: "Chefe Lendário — Comandante",
-      rules: "Os chefes jogam uma carta adicional a cada turno.\nNo início do turno dos chefes, os chefes perdem 2 pontos de vida.",
-      flavor: "Sua sede impetuosa de glória o cega para os danos colaterais de sua própria frota.",
+      name: "M.O.D.O.K.",
+      element: "spirit",
+      type: "Chefe Lendario - Comandante Hydra",
+      rules: "Os chefes jogam uma carta adicional a cada turno.\nNo inicio do turno dos chefes, os chefes perdem 2 pontos de vida.",
+      type: "Chefe Lendario - Cerebro Cientifico",
+      flavor: "Uma mente gigantesca exige calculos demais, recursos demais e sacrificios demais.",
       pt: "5/4",
-      artDefault: "🚢"
-    ,
-      nameEn: "Admiral Zhao",
-      typeEn: "Legendary Boss — Commander",
+      artDefault: "M",
+      nameEn: "M.O.D.O.K.",
+      typeEn: "Legendary Boss - Scientific Menace",
       rulesEn: `The bosses play an additional card each turn.\nAt the beginning of the bosses' turn, the bosses lose 2 life.`,
-      flavorEn: "His reckless thirst for glory blinds him to the collateral damage of his own fleet."},
+      flavorEn: "A gigantic mind demands too many calculations, too many resources, and too many sacrifices."
+    },
     {
       id: "hama",
       originalName: "Leatherhead, Sewer Gator",
-      name: "Hama, a Titereira",
-      element: "water",
-      type: "Chefe Lendário — Dobradora de Água",
+      name: "Killmonger, Scourge of Wakanda",
+      element: "earth",
+      type: "Chefe Lendario - Metamorfa",
       rules: "Quando esta carta entrar, os chefes ganham 5 pontos de vida para cada chefe em jogo.",
-      flavor: "A criadora do sangue-dobramento usa a umidade do ar e do corpo de suas vítimas na lua cheia.",
+      type: "Chefe Lendario - Guerreiro Mercenario",
+      flavor: "Cada confronto vencido fortalece sua lenda e atrai novos seguidores para a guerra.",
       pt: "4/5",
-      artDefault: "🌙"
-    ,
-      nameEn: "Hama, the Puppetmaster",
-      typeEn: "Legendary Boss — Waterbender",
+      artDefault: "K",
+      nameEn: "Killmonger, Scourge of Wakanda",
+      typeEn: "Legendary Boss - Mercenary Warrior",
       rulesEn: `When this card enters, the bosses gain 5 life for each boss on the battlefield.`,
-      flavorEn: "The creator of bloodbending uses the moisture from the air and her victims' bodies during the full moon."},
+      flavorEn: "Every won duel strengthens his legend and draws new followers into the war."
+    },
     {
       id: "long_feng",
       originalName: "Rat King, the Chaosbringer",
-      name: "Long Feng",
+      name: "The Kingpin of Crime",
       element: "earth",
-      type: "Chefe Lendário — Líder Dai Li",
-      rules: "Soldados que os chefes controlam têm toque mortífero.",
-      flavor: "Nas profundezas do Lago Laogai, ele controla segredos e lava cérebros para manter sua utopia.",
+      type: "Chefe Lendario - Monarca Arcano",
+      rules: "Lacaios que os chefes controlam tem toque mortifero.",
+      type: "Chefe Lendario - Senhor do Submundo",
+      flavor: "Na cidade dele, ate uma ordem sussurrada pode ser uma sentenca.",
       pt: "3/5",
-      artDefault: "🏛️"
-    ,
-      nameEn: "Long Feng",
-      typeEn: "Legendary Boss — Dai Li Leader",
-      rulesEn: `Soldiers the bosses control have deathtouch.`,
-      flavorEn: "Deep within Lake Laogai, he controls secrets and brainwashes to maintain his utopia."},
+      artDefault: "K",
+      nameEn: "The Kingpin of Crime",
+      typeEn: "Legendary Boss - Underworld Kingpin",
+      rulesEn: `Minions the bosses control have deathtouch.`,
+      flavorEn: "In his city, even a whispered order can be a sentence."
+    },
     {
       id: "mai",
       originalName: "Rocksteady, Rowdy Rhino",
-      name: "Mai",
-      element: "fire",
-      type: "Chefe Lendário — Atiradora",
-      rules: "Sempre que os chefes atacarem, coloque um marcador +1/+1 em cada criatura chamada Soldado da Nação do Fogo.",
-      flavor: "Agulhas de arremesso silenciosas e um tédio mortal para com seus oponentes.",
+      name: "Elektra, Daughter of the Hand",
+      element: "spirit",
+      type: "Chefe Lendario - Atirador de Elite",
+      rules: "Sempre que os chefes atacarem, coloque um marcador +1/+1 em cada criatura chamada HYDRA Troopers.",
+      type: "Chefe Lendario - Ninja da Mao",
+      flavor: "A Hand se move em silencio, mas cada golpe dela deixa um aviso.",
       pt: "4/4",
-      artDefault: "🎯"
-    ,
-      nameEn: "Mai",
-      typeEn: "Legendary Boss — Marksman",
-      rulesEn: `Whenever the bosses attack, put a +1/+1 counter on each creature named Fire Nation Soldier.`,
-      flavorEn: "Silent throwing needles and a deadly boredom towards her opponents."},
+      artDefault: "E",
+      nameEn: "Elektra, Daughter of the Hand",
+      typeEn: "Legendary Boss - Hand Ninja",
+      rulesEn: `Whenever the bosses attack, put a +1/+1 counter on each creature named HYDRA Troopers.`,
+      flavorEn: "The Hand moves in silence, but every strike she lands leaves a warning."
+    },
     {
       id: "sozin",
       originalName: "Savanti Romero, Temporal Rogue",
-      name: "Senhor do Fogo Sozin",
-      element: "fire",
-      type: "Chefe Lendário — Dobrador de Fogo",
-      rules: "Sempre que uma ou mais criaturas que os chefes controlam causarem dano de combate aos heróis, os heróis escolhem uma carta e a colocam no fundo do grimório.",
-      flavor: "A passagem de seu cometa marcou o início de uma guerra centenária de devastação.",
+      name: "Baron Helmut Zemo",
+      element: "spirit",
+      type: "Chefe Lendario - Titã Louco",
+      rules: "Sempre que uma ou mais criaturas que os chefes controlam causarem dano de combate aos herois, os herois escolhem uma carta e a colocam no fundo do grimorio.",
+      type: "Chefe Lendario - Estrategista Mastermind",
+      flavor: "Ele nao precisa vencer a luta se conseguir fazer os herois se desfazerem por dentro.",
       pt: "5/5",
-      artDefault: "☄️"
-    ,
-      nameEn: "Fire Lord Sozin",
-      typeEn: "Legendary Boss — Firebender",
+      artDefault: "Z",
+      nameEn: "Baron Helmut Zemo",
+      typeEn: "Legendary Boss - Mastermind Strategist",
       rulesEn: `Whenever one or more creatures the bosses control deal combat damage to the heroes, the heroes choose a card and put it on the bottom of the library.`,
-      flavorEn: "The passing of his comet marked the beginning of a hundred-year war of devastation."},
+      flavorEn: "He does not need to win the fight if he can make the heroes collapse from within."
+    },
     {
       id: "ozai",
       originalName: "Shredder, Foot Clan Overlord",
-      name: "Senhor do Fogo Ozai",
+      name: "Baron Strucker, HYDRA Overlord",
       element: "fire",
-      type: "Chefe Lendário — Dobrador de Fogo",
-      rules: "Sempre que uma criatura que os chefes controlam morrer, os heróis perdem 1 ponto de vida.",
-      flavor: "A força soberana suprema da Nação do Fogo, determinado a queimar o mundo sob o Cometa.",
+      type: "Chefe Lendario - Senhor do Tempo",
+      rules: "Sempre que uma criatura que os chefes controlam morrer, os herois perdem 1 ponto de vida.",
+      type: "Chefe Lendario - Chefe Principal da Hydra",
+      flavor: "Corta uma cabeca e duas tomam seu lugar, todas respondendo ao Barao Strucker.",
       pt: "6/6",
-      artDefault: "👑"
-    ,
-      nameEn: "Fire Lord Ozai",
-      typeEn: "Legendary Boss — Firebender",
+      artDefault: "S",
+      nameEn: "Baron Strucker, HYDRA Overlord",
+      typeEn: "Legendary Boss - Hydra Overlord",
       rulesEn: `Whenever a creature the bosses control dies, the heroes lose 1 life.`,
-      flavorEn: "The supreme sovereign force of the Fire Nation, determined to burn the world under the Comet."},
+      flavorEn: "Cut off one head and two take its place, all answering to Baron Strucker."
+    },
     {
       id: "jet_brainwashed",
       originalName: "Slash, the Dark Mirror",
-      name: "Jet, Rebelde Controlado",
-      element: "earth",
-      type: "Chefe Lendário — Guerreiro",
-      rules: "Criaturas atacantes que os chefes controlam têm iniciativa.",
-      flavor: "Suas espadas duplas em gancho agora atacam sob as ordens e controle da lavagem cerebral do Dai Li.",
+      name: "Crossbones, Malicious Mercenary",
+      element: "fire",
+      type: "Chefe Lendario - Simbionte",
+      rules: "Criaturas atacantes que os chefes controlam tem iniciativa.",
+      type: "Chefe Lendario - Combatente Brutal",
+      flavor: "Crossbones prefere uma entrada direta, explosiva e sem sobreviventes no caminho.",
       pt: "5/3",
-      artDefault: "🌲"
-    ,
-      nameEn: "Jet, Brainwashed Rebel",
-      typeEn: "Legendary Boss — Warrior",
+      artDefault: "C",
+      nameEn: "Crossbones, Malicious Mercenary",
+      typeEn: "Legendary Boss - Brutal Combatant",
       rulesEn: `Attacking creatures the bosses control have first strike.`,
-      flavorEn: "His dual hook swords now strike under the orders and brainwashing control of the Dai Li."}
+      flavorEn: "Crossbones prefers a direct, explosive entrance with no survivors in the way."
+    }
   ],
-  
+
   minions: [
     {
       id: "fire_soldier",
       originalName: "Foot Disciple",
-      name: "Soldado da Nação do Fogo",
+      name: "HYDRA Troopers",
       element: "fire",
-      type: "Criatura — Soldado da Nação do Fogo",
-      rules: "Esta criatura não pode bloquear.",
-      flavor: "Treinados exaustivamente para marchar e espalhar cinzas por onde passam.",
+      type: "Criatura - Tropas da HYDRA",
+      rules: "Esta criatura nao pode bloquear.",
+      flavor: "Infantaria basica da HYDRA, treinada para avancar mesmo quando a missao e impossivel.",
       pt: "3/3",
-      artDefault: "🛡️"
-    ,
-      nameEn: "Fire Nation Soldier",
-      typeEn: "Creature — Fire Nation Soldier",
+      artDefault: "H",
+      nameEn: "HYDRA Troopers",
+      typeEn: "Creature - HYDRA Troopers",
       rulesEn: `This creature can't block.`,
-      flavorEn: "Trained exhaustively to march and spread ashes wherever they go."},
+      flavorEn: "HYDRA's basic infantry, trained to advance even when the mission is impossible."
+    },
     {
       id: "fire_scout",
       originalName: "Foot Skirmisher",
-      name: "Batedor Aéreo da Nação do Fogo",
-      element: "fire",
-      type: "Criatura — Soldado Batedor",
-      rules: "Voar.\n(Esta criatura não pode ser bloqueada por criaturas sem voar.)\nEsta criatura não pode bloquear.",
-      flavor: "Montados em balões de guerra ou usando planadores, eles mapeiam o campo de batalha inimigo.",
+      name: "Ninja of the Hand",
+      element: "spirit",
+      type: "Criatura - Ninja da Hand",
+      rules: "Voar.\n(Esta criatura nao pode ser bloqueada por criaturas sem voar.)\nEsta criatura nao pode bloquear.",
+      flavor: "Rapido demais para ser cercado, o ninja da Hand surge onde a defesa esta aberta.",
       pt: "2/1",
-      artDefault: "🎈"
-    ,
-      nameEn: "Fire Nation Air Scout",
-      typeEn: "Creature — Scout Soldier",
+      artDefault: "N",
+      nameEn: "Ninja of the Hand",
+      typeEn: "Creature - Hand Ninja",
       rulesEn: `Flying.\n(This creature can't be blocked except by creatures with flying or reach.)\nThis creature can't block.`,
-      flavorEn: "Mounted on war balloons or using gliders, they map the enemy battlefield."},
+      flavorEn: "Too quick to be surrounded, the Hand ninja appears wherever the defense is open."
+    },
     {
       id: "fire_vanguard",
       originalName: "Foot Enforcer",
-      name: "Vanguarda de Elite do Fogo",
+      name: "Agents of HYDRA",
       element: "fire",
-      type: "Criatura — Soldado Elite",
-      rules: "Esta criatura não pode bloquear.\nEsta criatura só pode ser bloqueada por uma criatura.",
-      flavor: "Com armaduras pesadas e chamas concentradas, eles quebram qualquer linha de defesa dos heróis.",
+      type: "Criatura - Agente de Elite da Hydra",
+      rules: "Esta criatura nao pode bloquear.\nEsta criatura so pode ser bloqueada por uma criatura.",
+      flavor: "Executores veteranos da organizacao, enviados quando a tropa comum nao basta.",
       pt: "6/3",
-      artDefault: "💥"
-    ,
-      nameEn: "Fire Elite Vanguard",
-      typeEn: "Creature — Elite Soldier",
+      artDefault: "A",
+      nameEn: "Agents of HYDRA",
+      typeEn: "Creature - Elite Hydra Agent",
       rulesEn: `This creature can't block.\nThis creature can only be blocked by one creature.`,
-      flavorEn: "With heavy armor and concentrated flames, they break any of the heroes' defense lines."}
+      flavorEn: "Veteran enforcers of the organization, sent when ordinary troops are not enough."
+    }
   ],
-  
+
   events: [
     {
       id: "combustion_blast",
       originalName: "Baxter's Experiments",
-      name: "Explosão de Combustão",
+      name: "Super-Soldier Serum",
       element: "fire",
-      type: "Tática (Feitiço Inimigo)",
-      rules: "Copie o próximo evento que os Chefes jogarem.\n(Coloque este card ao lado do deck de eventos. Depois que o próximo evento for jogado e resolvido, coloque este card no descarte de eventos.)",
-      flavor: "Uma segunda faísca mental que explode logo em seguida, dobrando o perigo."
-    ,
-      nameEn: "Combustion Blast",
-      typeEn: "Tactic (Enemy Sorcery)",
+      type: "Tatica (Plano Vilanesco)",
+      rules: "Copie o proximo evento que os Chefes jogarem.\n(Coloque este card ao lado do deck de eventos. Depois que o proximo evento for jogado e resolvido, coloque este card no descarte de eventos.)",
+      flavor: "Um experimento cientifico e militar que dobra o perigo do proximo plano.",
+      nameEn: "Super-Soldier Serum",
+      typeEn: "Tactic (Villain Scheme)",
       rulesEn: `Copy the next event the Bosses play.\n(Put this card aside. After the next event is played and resolved, put this card into the graveyard.)`,
-      flavorEn: "A second mental spark that explodes shortly after, doubling the danger."},
+      flavorEn: "A scientific and military experiment that doubles the danger of the next scheme."
+    },
     {
       id: "zuko_fire_lash",
       originalName: "Bebop's Rampage",
-      name: "Açoite de Fogo de Zuko",
+      name: "Death to Our Enemies",
       element: "fire",
-      type: "Tática (Feitiço Inimigo)",
-      rules: "Esta Tática causa 2 pontos de dano a cada criatura que os heróis controlam.",
-      flavor: "Um chicote de fogo fluido que varre os benders heróis de uma vez só."
-    ,
-      nameEn: "Zuko's Fire Lash",
-      typeEn: "Tactic (Enemy Sorcery)",
+      type: "Tatica (Plano Vilanesco)",
+      rules: "Esta Tatica causa 2 pontos de dano a cada criatura que os herois controlam.",
+      flavor: "Os viloes atacam com agressividade total, sem poupar ninguem no caminho.",
+      nameEn: "Death to Our Enemies",
+      typeEn: "Tactic (Villain Scheme)",
       rulesEn: `This Tactic deals 2 damage to each creature the heroes control.`,
-      flavorEn: "A fluid fire whip that sweeps away the hero benders all at once."},
+      flavorEn: "The villains attack with total aggression, sparing no one in their path."
+    },
     {
       id: "ty_lee_chi_block",
       originalName: "Chrome Dome's Overload",
-      name: "Bloqueio de Chi de Ty Lee",
-      element: "fire",
-      type: "Tática (Feitiço Inimigo)",
-      rules: "Cada herói sacrifica uma criatura virada que controla.",
-      flavor: "Um toque rápido nos pontos de pressão desativa completamente a capacidade de dobrar dos heróis."
-    ,
-      nameEn: "Ty Lee's Chi Block",
-      typeEn: "Tactic (Enemy Sorcery)",
+      name: "Robot Domination",
+      element: "earth",
+      type: "Tatica (Plano Vilanesco)",
+      rules: "Cada heroi sacrifica uma criatura virada que controla.",
+      flavor: "Tecnologia fora de controle transforma cada maquina em uma ordem de execucao.",
+      nameEn: "Robot Domination",
+      typeEn: "Tactic (Villain Scheme)",
       rulesEn: `Each hero sacrifices a tapped creature they control.`,
-      flavorEn: "A quick touch on pressure points completely disables the heroes' bending abilities."},
+      flavorEn: "Technology out of control turns every machine into an execution order."
+    },
     {
       id: "azula_infiltration",
       originalName: "Karai's Planning",
-      name: "Infiltração de Azula",
-      element: "fire",
-      type: "Tática (Feitiço Inimigo)",
-      rules: "Os heróis perdem 3 pontos de vida e os chefes ganham 3 pontos de vida.",
-      flavor: "Disfarçada como guerreira Kyoshi, ela rouba a liderança por dentro das muralhas de Ba Sing Se."
-    ,
-      nameEn: "Azula's Infiltration",
-      typeEn: "Tactic (Enemy Sorcery)",
+      name: "Villainous Hideout",
+      element: "water",
+      type: "Tatica (Plano Vilanesco)",
+      rules: "Os herois perdem 3 pontos de vida e os chefes ganham 3 pontos de vida.",
+      flavor: "Na base inimiga, cada mapa na parede ja aponta para a proxima derrota.",
+      nameEn: "Villainous Hideout",
+      typeEn: "Tactic (Villain Scheme)",
       rulesEn: `The heroes lose 3 life and the bosses gain 3 life.`,
-      flavorEn: "Disguised as a Kyoshi warrior, she steals the leadership from inside Ba Sing Se's walls."},
+      flavorEn: "Inside the enemy base, every map on the wall already points to the next defeat."
+    },
     {
       id: "zhao_conquest",
       originalName: "Krang's Stratagem",
-      name: "Conquista do Almirante Zhao",
+      name: "Construct a Cosmic Cube",
       element: "fire",
-      type: "Tática (Feitiço Inimigo)",
-      rules: "Como equipe, os heróis descartam um total de 2 cartas.",
-      flavor: "O cerco massivo ao Polo Norte força os benders da Tribo da Água a recuarem sob pressão."
-    ,
-      nameEn: "Admiral Zhao's Conquest",
-      typeEn: "Tactic (Enemy Sorcery)",
+      type: "Tatica (Plano Vilanesco)",
+      rules: "Como equipe, os herois descartam um total de 2 cartas.",
+      flavor: "Um plano de dominacao ganha forma enquanto energia cosmica se acumula.",
+      nameEn: "Construct a Cosmic Cube",
+      typeEn: "Tactic (Villain Scheme)",
       rulesEn: `As a team, the heroes discard a total of 2 cards.`,
-      flavorEn: "The massive siege on the North Pole forces the Water Tribe benders to retreat under pressure."},
+      flavorEn: "A domination plan takes shape as cosmic energy builds."
+    },
     {
       id: "hama_bloodbending",
       originalName: "Leatherhead's Smackdown",
-      name: "Sangue-Dobramento de Hama",
+      name: "The Ruinous Wrecking Crew",
       element: "water",
-      type: "Tática (Feitiço Inimigo)",
-      rules: "Como equipe, os heróis escolhem uma criatura que controlam com o maior poder e a destroem. Os chefes perdem pontos de vida igual ao poder dela.",
-      flavor: "Manipulando os fluidos do próprio guerreiro herói, ela o força a atacar a si mesmo."
-    ,
-      nameEn: "Hama's Bloodbending",
-      typeEn: "Tactic (Enemy Sorcery)",
+      type: "Tatica (Plano Vilanesco)",
+      rules: "Como equipe, os herois escolhem uma criatura que controlam com o maior poder e a destroem. Os chefes perdem pontos de vida igual ao poder dela.",
+      flavor: "A pancadaria destrutiva derruba o maior defensor e cobra o preco em vida.",
+      nameEn: "The Ruinous Wrecking Crew",
+      typeEn: "Tactic (Villain Scheme)",
       rulesEn: `As a team, the heroes choose a creature they control with the greatest power and destroy it. The bosses lose life equal to its power.`,
-      flavorEn: "Manipulating the fluids of the hero warrior themselves, she forces them to attack themselves."},
+      flavorEn: "The destructive brawl drops the strongest defender and exacts a price in life."
+    },
     {
       id: "long_feng_brainwash",
       originalName: "Rat King's Revolution",
-      name: "Lavagem Cerebral de Long Feng",
+      name: "The Masters of Evil",
       element: "earth",
-      type: "Tática (Feitiço Inimigo)",
-      rules: "Cada herói vira X criaturas que controla, onde X é o número de chefes em jogo.\n(Se uma permanente já estiver virada, ela continua virada.)",
-      flavor: "Não há guerra em Ba Sing Se. O Rei da Terra convida você para o Lago Laogai."
-    ,
-      nameEn: "Long Feng's Brainwash",
-      typeEn: "Tactic (Enemy Sorcery)",
+      type: "Tatica (Plano Vilanesco)",
+      rules: "Cada heroi vira X criaturas que controla, onde X e o numero de chefes em jogo.\n(Se uma permanente ja estiver virada, ela continua virada.)",
+      flavor: "Uma coalizao criminosa se ergue, e cada heroi sente a pressao do cerco.",
+      nameEn: "The Masters of Evil",
+      typeEn: "Tactic (Villain Scheme)",
       rulesEn: `Each hero taps X creatures they control, where X is the number of bosses on the battlefield.\n(If a permanent is already tapped, it remains tapped.)`,
-      flavorEn: "There is no war in Ba Sing Se. The Earth King invites you to Lake Laogai."},
+      flavorEn: "A criminal coalition rises, and every hero feels the pressure of the siege."
+    },
     {
       id: "mai_pinpoint",
       originalName: "Rocksteady's Beatdown",
-      name: "Adaga Certeira de Mai",
-      element: "fire",
-      type: "Tática (Feitiço Inimigo)",
-      rules: "Destrua todas as criaturas com voar que os heróis controlam.",
-      flavor: "Sua pontaria milimétrica fixa instantaneamente as asas dos oponentes na parede."
-    ,
-      nameEn: "Mai's Pinpoint Dagger",
-      typeEn: "Tactic (Enemy Sorcery)",
+      name: "Evil's Thrall",
+      element: "earth",
+      type: "Tatica (Plano Vilanesco)",
+      rules: "Destrua todas as criaturas com voar que os herois controlam.",
+      flavor: "Capangas violentos avancam sob uma forca brutal que nao aceita recuo.",
+      nameEn: "Evil's Thrall",
+      typeEn: "Tactic (Villain Scheme)",
       rulesEn: `Destroy all creatures with flying the heroes control.`,
-      flavorEn: "Her pinpoint accuracy instantly pins the opponents' wings to the wall."},
+      flavorEn: "Violent henchmen advance under a brutal force that accepts no retreat."
+    },
     {
       id: "sozin_comet_erase",
       originalName: "Savanti Romero's Curse",
-      name: "Cometa de Sozin",
-      element: "fire",
-      type: "Tática (Feitiço Inimigo)",
-      rules: "Cada herói devolve X criaturas que controla para a mão de seus donos, onde X é o número de chefes em jogo.",
-      flavor: "Um calor insuportável consome a atmosfera, forçando todas as defesas a recuarem."
-    ,
-      nameEn: "Sozin's Comet",
-      typeEn: "Tactic (Enemy Sorcery)",
+      name: "Thunderbolts Conspiracy",
+      element: "spirit",
+      type: "Tatica (Plano Vilanesco)",
+      rules: "Cada heroi devolve X criaturas que controla para a mao de seus donos, onde X e o numero de chefes em jogo.",
+      flavor: "Um plano secreto vira os recursos dos herois contra eles mesmos.",
+      nameEn: "Thunderbolts Conspiracy",
+      typeEn: "Tactic (Villain Scheme)",
       rulesEn: `Each hero returns X creatures they control to their owners' hands, where X is the number of bosses on the battlefield.`,
-      flavorEn: "An unbearable heat consumes the atmosphere, forcing all defenses to retreat."},
+      flavorEn: "A secret plan turns the heroes' own resources against them."
+    },
     {
       id: "ozai_decree",
       originalName: "Shredder's Challenge",
-      name: "Decreto Imperial de Ozai",
-      element: "fire",
-      type: "Tática (Feitiço Inimigo)",
-      rules: "Retorne 2 cartas de Soldado aleatórias do cemitério dos chefes para o campo de batalha sob o controle dos chefes.",
-      flavor: "Ele exige lealdade absoluta e ressuscita sua infantaria caída para marchar novamente."
-    ,
-      nameEn: "Ozai's Imperial Decree",
-      typeEn: "Tactic (Enemy Sorcery)",
+      name: "Hour of Defeat",
+      element: "water",
+      type: "Tatica (Plano Vilanesco)",
+      rules: "Retorne 2 cartas de Soldado aleatorias do cemiterio dos chefes para o campo de batalha sob o controle dos chefes.",
+      flavor: "O desafio do chefe chega no pior momento, trazendo reforcos do descarte.",
+      nameEn: "Hour of Defeat",
+      typeEn: "Tactic (Villain Scheme)",
       rulesEn: `Return 2 random Soldier cards from the bosses' graveyard to the battlefield under the bosses' control.`,
-      flavorEn: "He demands absolute loyalty and resurrects his fallen infantry to march once again."},
+      flavorEn: "The boss challenge arrives at the worst moment, bringing reinforcements from the discard."
+    },
     {
       id: "jet_rampage",
       originalName: "Slash's Smash",
-      name: "Emboscada Rebelde de Jet",
-      element: "earth",
-      type: "Tática (Feitiço Inimigo)",
-      rules: "Destrua todos os Aliados que os heróis controlam.",
-      flavor: "Jet usa táticas implacáveis de guerrilha, inundando o vale sem se importar com inocentes."
-    ,
-      nameEn: "Jet's Rebel Ambush",
-      typeEn: "Tactic (Enemy Sorcery)",
+      name: "Punishing Punch",
+      element: "spirit",
+      type: "Tatica (Plano Vilanesco)",
+      rules: "Destrua todos os Aliados que os herois controlam.",
+      flavor: "Um golpe brutal atravessa a linha de frente e derruba os aliados.",
+      nameEn: "Punishing Punch",
+      typeEn: "Tactic (Villain Scheme)",
       rulesEn: `Destroy all Allies the heroes control.`,
-      flavorEn: "Jet uses ruthless guerrilla tactics, flooding the valley without caring for innocents."},
+      flavorEn: "A brutal blow breaks through the front line and drops the allies."
+    },
     {
       id: "fire_ambush",
       originalName: "Villain Infiltration",
-      name: "Emboscada da Nação do Fogo",
+      name: "HYDRA Infiltration",
       element: "fire",
-      type: "Tática (Feitiço Inimigo)",
-      rules: "Como equipe, os heróis escolhem uma criatura que controlam com o maior poder e a destroem.",
-      flavor: "Um ataque surpresa das forças especiais Yuyan incapacita o líder da defesa."
-    ,
-      nameEn: "Fire Nation Ambush",
-      typeEn: "Tactic (Enemy Sorcery)",
+      type: "Tatica (Plano Vilanesco)",
+      rules: "Como equipe, os herois escolhem uma criatura que controlam com o maior poder e a destroem.",
+      flavor: "A infiltracao da HYDRA derruba o maior defensor antes do alarme tocar.",
+      nameEn: "HYDRA Infiltration",
+      typeEn: "Tactic (Villain Scheme)",
       rulesEn: `As a team, the heroes choose a creature they control with the greatest power and destroy it.`,
-      flavorEn: "A surprise attack from the Yuyan special forces incapacitates the defense leader."},
+      flavorEn: "HYDRA infiltration drops the strongest defender before the alarm sounds."
+    },
     {
       id: "firebombing",
       originalName: "Villain Mayhem",
-      name: "Bombardeio da Nação do Fogo",
+      name: "Cruel Alliance",
       element: "fire",
-      type: "Tática (Feitiço Inimigo)",
-      rules: "Como equipe, os heróis escolhem 3 criaturas que controlam. Destrua todas as outras criaturas que os heróis controlam.",
-      flavor: "Dirigíveis cobrem os céus e lançam fogo devastador, limpando o campo de batalha."
-    ,
-      nameEn: "Fire Nation Firebombing",
-      typeEn: "Tactic (Enemy Sorcery)",
+      type: "Tatica (Plano Vilanesco)",
+      rules: "Como equipe, os herois escolhem 3 criaturas que controlam. Destrua todas as outras criaturas que os herois controlam.",
+      flavor: "Uma alianca de viloes obriga os herois a escolher quem ainda conseguem salvar.",
+      nameEn: "Cruel Alliance",
+      typeEn: "Tactic (Villain Scheme)",
       rulesEn: `As a team, the heroes choose 3 creatures they control. Destroy all other creatures the heroes control.`,
-      flavorEn: "Airships cover the skies and drop devastating fire, clearing the battlefield."},
+      flavorEn: "An alliance of villains forces the heroes to choose who they can still save."
+    },
     {
       id: "resurgence",
       originalName: "Villain Scheme",
-      name: "Ressurgimento Imperial",
-      element: "fire",
-      type: "Tática (Feitiço Inimigo)",
-      rules: "Embaralhe esta carta e todo o cemitério dos chefes de volta no grimório (Event Deck) dos chefes.",
-      flavor: "Quando a vitória dos heróis parece próxima, a máquina de guerra se reorganiza."
-    ,
-      nameEn: "Imperial Resurgence",
-      typeEn: "Tactic (Enemy Sorcery)",
+      name: "Decoy Ploy",
+      element: "spirit",
+      type: "Tatica (Plano Vilanesco)",
+      rules: "Embaralhe esta carta e todo o cemiterio dos chefes de volta no grimorio (Event Deck) dos chefes.",
+      flavor: "O plano enganoso puxa o descarte de volta para o baralho e muda a rota da batalha.",
+      nameEn: "Decoy Ploy",
+      typeEn: "Tactic (Villain Scheme)",
       rulesEn: `Shuffle this card and the bosses' entire graveyard back into the bosses' Event Deck.`,
-      flavorEn: "When the heroes' victory seems close, the war machine reorganizes itself."}
+      flavorEn: "The deceptive ploy pulls the discard back into the deck and changes the battle's path."
+    }
   ]
 };
 
-// ── SISTEMA DE PERSISTÊNCIA DE CUSTOMIZAÇÃO DE ARTE (LocalStorage) ──
+// -- SISTEMA DE PERSISTENCIA DE CUSTOMIZACAO DE ARTE (LocalStorage) --
 
-// Artes padrão globais (publicadas no JS) para funcionar em qualquer dispositivo.
-// Preencha por cardId, por exemplo:
-// combustion_man: { artUrl: "https://cards.scryfall.io/art_crop/front/..." }
+// Artes base recuperadas da galeria temporaria. O localStorage ainda pode sobrescrever estes links.
 const DEFAULT_CUSTOM_ART = {
-  combustion_man: { artUrl: "https://cards.scryfall.io/art_crop/front/8/6/86f7399d-6876-4e85-ba34-ff1f97dc144a.jpg" },
-  zuko: { artUrl: "https://cards.scryfall.io/art_crop/front/6/a/6a73b372-9c0e-4a85-89d2-440163330687.jpg" },
-  ty_lee: { artUrl: "https://cards.scryfall.io/art_crop/front/d/c/dcd9df24-272b-4aa1-b05f-6ee6b3d3dfe7.jpg" },
-  azula: { artUrl: "https://cards.scryfall.io/art_crop/front/b/c/bc6146bf-f0c6-4557-af6a-74c643d5fc01.jpg" },
-  zhao: { artUrl: "https://cards.scryfall.io/art_crop/front/3/f/3fd48a57-b0bb-4177-a0f3-bd317a179cbe.jpg" },
-  hama: { artUrl: "https://cards.scryfall.io/art_crop/front/6/f/6fa1197d-7b19-4d86-81e2-5c87de87757b.jpg" },
-  long_feng: { artUrl: "https://cards.scryfall.io/art_crop/front/a/3/a3eb92fe-bc59-4472-9028-f368bd015609.jpg" },
-  mai: { artUrl: "https://cards.scryfall.io/art_crop/front/7/4/74dd4c0e-27b8-4c47-b7a6-a281413cd6b4.jpg" },
-  sozin: { artUrl: "https://cards.scryfall.io/art_crop/back/1/4/14eadf46-90c2-4376-8183-6a922a60174d.jpg" },
-  ozai: { artUrl: "https://cards.scryfall.io/art_crop/front/a/9/a98b1550-4609-4a2f-9371-4afe1cdc613e.jpg" },
-  jet_brainwashed: { artUrl: "https://cards.scryfall.io/art_crop/front/9/2/9202c044-15e4-4218-a94d-16287ba19d69.jpg" },
-  fire_soldier: { artUrl: "https://cards.scryfall.io/art_crop/front/a/2/a20aaa6c-7032-43c1-9e7c-57cf8c8ecfd4.jpg" },
-  fire_scout: { artUrl: "https://cards.scryfall.io/art_crop/front/6/8/6829b20d-c2fa-41a6-89ca-f21c522d8866.jpg" },
-  fire_vanguard: { artUrl: "https://cards.scryfall.io/art_crop/front/4/a/4a08c7c4-d20f-4c5b-a308-b8c84c9030a9.jpg" },
-  combustion_blast: { artUrl: "https://cards.scryfall.io/art_crop/front/5/7/5787b0e0-9469-4a6d-8b81-c992628e28c0.jpg" },
-  azula_infiltration: { artUrl: "https://cards.scryfall.io/art_crop/front/d/a/daf30e1c-436d-4f23-b1d2-570619a4b7f5.jpg" },
-  zuko_fire_lash: { artUrl: "https://cards.scryfall.io/art_crop/front/3/9/3959cf4e-57a5-4355-9837-56f70b321874.jpg" },
-  ty_lee_chi_block: { artUrl: "https://cards.scryfall.io/art_crop/front/3/0/308cc687-9cb2-4e3a-98db-c5ba2a7da115.jpg" },
-  zhao_conquest: { artUrl: "https://cards.scryfall.io/art_crop/front/e/5/e58372cc-9a89-47a4-a0db-df5435e26cd3.jpg" },
-  hama_bloodbending: { artUrl: "https://cards.scryfall.io/art_crop/front/9/b/9bb928ae-f636-4aee-9146-a7885e6a8976.jpg" },
-  long_feng_brainwash: { artUrl: "https://cards.scryfall.io/art_crop/front/b/1/b17e8bdb-4b91-4a9d-bfe1-8a55f0bd040b.jpg" },
-  mai_pinpoint: { artUrl: "https://cards.scryfall.io/art_crop/front/7/3/732e6bc9-0798-4c00-aea0-5ef4298b45f5.jpg" },
-  sozin_comet_erase: { artUrl: "https://cards.scryfall.io/art_crop/front/6/4/649e50e5-299b-4191-87a8-36e9378795be.jpg" },
-  ozai_decree: { artUrl: "https://cards.scryfall.io/art_crop/front/2/2/22cad680-d46a-4589-a633-b6ee9a78d61e.jpg" },
-  jet_rampage: { artUrl: "https://cards.scryfall.io/art_crop/front/7/9/79d4b68c-36b9-4597-83f8-a869c5cf4b93.jpg" },
-  fire_ambush: { artUrl: "https://cards.scryfall.io/art_crop/front/9/9/99244462-a996-4a5b-91fb-947045647d6d.jpg" },
-  firebombing: { artUrl: "https://cards.scryfall.io/art_crop/front/b/5/b51d3259-c41c-4f64-9666-0a9e676c812f.jpg" },
-  resurgence: { artUrl: "https://cards.scryfall.io/art_crop/front/7/7/77e548c9-8bed-40c3-bcdd-9d97a82c885d.jpg" }
+  combustion_man: { artUrl: "https://cards.scryfall.io/art_crop/front/0/7/07c70df6-b064-424a-852e-201b312a5b54.jpg" },
+  zuko: { artUrl: "https://cards.scryfall.io/art_crop/front/f/d/fd1f0b5f-5e0e-4da1-ab54-a62db5af3591.jpg" },
+  ty_lee: { artUrl: "https://cards.scryfall.io/art_crop/front/e/b/ebf71ffc-6e3e-4ca0-a84a-3c1ebd2b64b1.jpg" },
+  azula: { artUrl: "https://cards.scryfall.io/art_crop/front/e/9/e94ccedb-1d27-4098-8823-d8d99b30387c.jpg" },
+  zhao: { artUrl: "https://cards.scryfall.io/art_crop/front/3/8/38e87542-50f7-4812-9338-84e4b9b7bb44.jpg" },
+  hama: { artUrl: "https://cards.scryfall.io/art_crop/front/5/0/5060aa13-4b33-4b3a-8bdb-dd81308fa3e3.jpg" },
+  long_feng: { artUrl: "https://cards.scryfall.io/art_crop/front/4/9/495c08ea-5502-4bfe-aa15-fa85556755ae.jpg" },
+  mai: { artUrl: "https://cards.scryfall.io/art_crop/front/a/c/ac3e586c-d654-4631-beda-a5e29cf04717.jpg" },
+  sozin: { artUrl: "https://cards.scryfall.io/art_crop/front/c/2/c2aadc25-7755-4bc8-a8af-b01d27eec364.jpg" },
+  ozai: { artUrl: "https://cards.scryfall.io/art_crop/front/e/a/eaf2251a-ffaf-4055-9474-7e3d08d89609.jpg" },
+  jet_brainwashed: { artUrl: "https://cards.scryfall.io/art_crop/front/1/5/1576148a-2371-49ba-8eef-0bc2ec3dcaf3.jpg" },
+  fire_soldier: { artUrl: "https://cards.scryfall.io/art_crop/front/4/0/40c202f1-6e0d-42f4-a41e-e0be3362d585.jpg" },
+  fire_scout: { artUrl: "https://cards.scryfall.io/art_crop/front/6/b/6b8116d8-2cc6-449b-a8b4-8a5166553497.jpg" },
+  fire_vanguard: { artUrl: "https://cards.scryfall.io/art_crop/front/8/5/857fef2e-df1f-4ec6-a262-f6fa52389cf9.jpg" },
+  combustion_blast: { artUrl: "https://cards.scryfall.io/art_crop/front/8/4/845b0be1-4f85-4a8c-8205-dc85c8cf9a61.jpg" },
+  zuko_fire_lash: { artUrl: "https://cards.scryfall.io/art_crop/front/f/2/f2a8f518-c0b5-4e15-aab2-49b5ef29fb41.jpg" },
+  ty_lee_chi_block: { artUrl: "https://cards.scryfall.io/art_crop/front/b/2/b26bb968-6612-43fe-9147-a3d4786cbc20.jpg" },
+  azula_infiltration: { artUrl: "https://cards.scryfall.io/art_crop/front/8/2/822b0249-e1df-453d-8b60-75a5196ed818.jpg" },
+  zhao_conquest: { artUrl: "https://cards.scryfall.io/art_crop/front/4/4/448de757-ac16-4529-b851-1a1331b821a5.jpg" },
+  hama_bloodbending: { artUrl: "https://cards.scryfall.io/art_crop/front/4/d/4d8c8ceb-84cd-46d2-9230-ab6ca4569334.jpg" },
+  long_feng_brainwash: { artUrl: "https://cards.scryfall.io/art_crop/front/6/5/65ba4439-3282-4179-85b9-67a25e2e5d24.jpg" },
+  mai_pinpoint: { artUrl: "https://cards.scryfall.io/art_crop/front/3/1/310e30cd-b8c3-40ea-9d61-57c5c5fc2a0b.jpg" },
+  sozin_comet_erase: { artUrl: "https://cards.scryfall.io/art_crop/front/f/4/f498c1a4-54d2-4e87-952f-8cf7e408930c.jpg" },
+  ozai_decree: { artUrl: "https://cards.scryfall.io/art_crop/front/9/e/9e0034dd-396e-46af-b931-0daa25da4406.jpg" },
+  jet_rampage: { artUrl: "https://cards.scryfall.io/art_crop/front/a/3/a33a4cb4-1b57-47ca-8e5e-58ff46a6e0ce.jpg" },
+  fire_ambush: { artUrl: "https://cards.scryfall.io/art_crop/front/c/2/c2e446e1-e384-4d5f-8099-544f78c08510.jpg" },
+  firebombing: { artUrl: "https://cards.scryfall.io/art_crop/front/d/8/d895d5a1-d382-438b-8551-e142bb5142af.jpg" },
+  resurgence: { artUrl: "https://cards.scryfall.io/art_crop/front/d/8/d8719b74-48ef-4f68-b59a-949edd644ddc.jpg" }
 };
-
 const CustomizationStore = {
-  key: 'avatar_teamup_custom_art_db',
+  key: 'marvel_teamup_custom_art_db',
   
   getAll() {
     if (typeof localStorage === 'undefined') return {};
@@ -709,9 +716,9 @@ function migrateLegacyCustomTexts() {
     const exactRuleFixes = {
       jet_rampage: "Destrua todos os Aliados que os heróis controlam.",
       ozai: "Sempre que uma criatura que os chefes controlam morrer, os heróis perdem 1 ponto de vida.",
-      mai: "Sempre que os chefes atacarem, coloque um marcador +1/+1 em cada criatura chamada Soldado da Nação do Fogo.",
-      long_feng: "Soldados que os chefes controlam têm toque mortífero.",
-      hama: "Quando esta carta entrar, os chefes ganham 5 pontos de vida para cada chefe em jogo."
+      mai: "Sempre que os chefes atacarem, coloque um marcador +1/+1 em cada criatura chamada HYDRA Troopers.",
+      hama: "Quando esta carta entrar, os chefes ganham 5 pontos de vida para cada chefe em jogo.",
+      long_feng: "Lacaios que os chefes controlam tem toque mortifero."
     };
 
     Object.entries(exactRuleFixes).forEach(([cardId, canonicalRule]) => {
@@ -734,7 +741,12 @@ function migrateLegacyCustomTexts() {
       updated = updated.replace(/\bDobradores\b/gi, 'Aliados');
 
       // Ajustes de consistência de texto recorrentes
-      updated = updated.replace(/Soldado da Nação do Fogo(?!\.)/gi, 'Soldado da Nação do Fogo');
+      updated = updated.replace(/Soldado da Hydra(?!\.)/gi, 'HYDRA Troopers');
+      updated = updated.replace(/Hydra Soldier/gi, 'HYDRA Troopers');
+      updated = updated.replace(/Soldados que os chefes controlam recebem \+1\/\+0 para cada chefe em jogo\./gi, 'Lacaios que os chefes controlam recebem +1/+0 para cada chefe em jogo.');
+      updated = updated.replace(/Soldados que os chefes controlam t[eê]m toque mort[ií]fero\./gi, 'Lacaios que os chefes controlam tem toque mortifero.');
+      updated = updated.replace(/Soldiers the bosses control get \+1\/\+0 for each boss on the battlefield\./gi, 'Minions the bosses control get +1/+0 for each boss on the battlefield.');
+      updated = updated.replace(/Soldiers the bosses control have deathtouch\./gi, 'Minions the bosses control have deathtouch.');
       updated = updated.replace(/chefes perdem 1 ponto de vida\./gi, 'heróis perdem 1 ponto de vida.');
 
       if (updated !== item.customText) {
@@ -765,7 +777,7 @@ const GameEngine = {
   eventDeck: [],     // Biblioteca de eventos inimiga (27 cartas)
   eventGraveyard: [],// Cemitério
   drawnCards: [],    // Cartas compradas no turno atual
-  battlefield: [],   // Criaturas da Nação do Fogo em combate
+  battlefield: [],   // Criaturas da Hydra em combate
   
   turnCount: 1,
   isGameOver: false,
@@ -813,13 +825,13 @@ const GameEngine = {
     //    DB tem 14 táticas: 11 de boss específicas + Emboscada + Bombardeio + Ressurgimento (1 cópia cada)
     //    + cópias extras abaixo para atingir os totais corretos:
     //    - 11x Táticas de boss (1 cada): combustion, zuko, ty_lee, azula, zhao, hama, long_feng, mai, sozin, ozai, jet
-    //    - 2x Emboscada da Nação do Fogo (Villain Infiltration) → 1 no DB + 1 extra abaixo
-    //    - 3x Bombardeio da Nação do Fogo (Villain Mayhem) → 1 no DB + 2 extras abaixo
+    //    - 2x HYDRA Infiltration (Villain Infiltration) -> 1 no DB + 1 extra abaixo
+    //    - 3x Cruel Alliance (Villain Mayhem) -> 1 no DB + 2 extras abaixo
     //    - 1x Ressurgimento Imperial (Villain Scheme) → 1 no DB
     //    Total táticas: 14 (do forEach) + 1 + 2 = 17
-    //    - 5x Soldado da Nação do Fogo (Foot Disciple)
-    //    - 3x Batedor Aéreo (Foot Skirmisher)
-    //    - 2x Vanguarda de Elite (Foot Enforcer)
+    //    - 5x HYDRA Troopers (Foot Disciple)
+    //    - 3x Ninja of the Hand (Foot Skirmisher)
+    //    - 2x Agents of HYDRA (Foot Enforcer)
     //    Total lacaios: 10
     //    GRAND TOTAL: 17 + 10 = 27 ✓
     const deck = [];
@@ -829,17 +841,17 @@ const GameEngine = {
       deck.push({ ...ev, instanceId: `event_${ev.id}_${Date.now()}_${Math.random()}` });
     });
     
-    // 5x Soldado da Nação do Fogo (Foot Disciple)
+    // 5x HYDRA Troopers (Foot Disciple)
     for (let i = 0; i < 5; i++) {
       deck.push({ ...CARD_DATABASE.minions[0], instanceId: `minion_soldier_${i}` });
     }
     
-    // 3x Batedor Aéreo (Foot Skirmisher)
+    // 3x Ninja of the Hand (Foot Skirmisher)
     for (let i = 0; i < 3; i++) {
       deck.push({ ...CARD_DATABASE.minions[1], instanceId: `minion_scout_${i}` });
     }
     
-    // 2x Vanguarda de Elite (Foot Enforcer)
+    // 2x Agents of HYDRA (Foot Enforcer)
     for (let i = 0; i < 2; i++) {
       deck.push({ ...CARD_DATABASE.minions[2], instanceId: `minion_vanguard_${i}` });
     }
@@ -910,7 +922,7 @@ const GameEngine = {
     if (this.activeStage > 3) {
       this.isGameOver = true;
       this.isVictory = true;
-      this.logMessage("🏆 VITÓRIA SUPREMA DOS HERÓIS! Todos os chefes da Nação do Fogo foram derrotados!", "🏆 SUPREME HERO VICTORY! All Fire Nation bosses have been defeated!");
+      this.logMessage("🏆 VITÓRIA SUPREMA DOS HERÓIS! Todos os chefes da Hydra foram derrotados!", "🏆 SUPREME HERO VICTORY! All Hydra bosses have been defeated!");
       return;
     }
     
@@ -963,13 +975,13 @@ const GameEngine = {
 
     this.logMessage(`⌛ Turno ${this.turnCount} — Fase de Ação dos Chefes:`, `⌛ Turn ${this.turnCount} — Boss Action Phase:`);
 
-    // Efeito passivo do Almirante Zhao:
+    // Efeito passivo do M.O.D.O.K.:
     // - No início do turno dos chefes, eles perdem 2 de vida.
     // - Os chefes jogam 1 evento adicional por turno.
     const zhaoActive = Array.isArray(this.activeBosses) && this.activeBosses.some(b => b && b.id === 'zhao');
     if (zhaoActive) {
       this.bossesLife = Math.max(0, this.bossesLife - 2);
-      this.logMessage("🩸 Almirante Zhao ativo: os chefes perdem 2 pontos de vida no início do turno.", "🩸 Admiral Zhao active: bosses lose 2 life points at the start of the turn.");
+      this.logMessage("🩸 M.O.D.O.K. ativo: os chefes perdem 2 pontos de vida no início do turno.", "🩸 M.O.D.O.K. active: bosses lose 2 life points at the start of the turn.");
       if (this.bossesLife === 0) {
         this.nextStage();
         return;
@@ -987,7 +999,7 @@ const GameEngine = {
       if (!drawn) break; // Deck e cemitério vazios
     }
 
-    // Efeito do Príncipe Zuko e da Mai:
+    // Efeito do Bullseye e da Elektra:
     // Dispara somente quando há ataque válido de lacaio.
     // Lacaios que entraram neste turno (revelados na Fase de Ação atual) não contam como atacantes.
     const activeBosses = Array.isArray(this.activeBosses) ? this.activeBosses : [];
@@ -1009,12 +1021,12 @@ const GameEngine = {
       });
       if (buffed > 0) {
         const triggerText = soldierBuffTriggers === 1 ? "1 gatilho" : `${soldierBuffTriggers} gatilhos`;
-        this.logMessage(`🔥 Zuko/Mai (${triggerText}): +${soldierBuffTriggers}/+${soldierBuffTriggers} aplicado em ${buffed} Soldado(s) da Nação do Fogo.`, `🔥 Zuko/Mai (${triggerText}): +${soldierBuffTriggers}/+${soldierBuffTriggers} applied to ${buffed} Fire Nation Soldier(s).`);
+        this.logMessage(`🔥 Bullseye/Elektra (${triggerText}): +${soldierBuffTriggers}/+${soldierBuffTriggers} aplicado em ${buffed} HYDRA Troopers.`, `🔥 Bullseye/Elektra (${triggerText}): +${soldierBuffTriggers}/+${soldierBuffTriggers} applied to ${buffed} HYDRA Troopers.`);
       } else {
-        this.logMessage("🔥 Zuko/Mai: nenhum Soldado da Nação do Fogo em campo para receber +1/+1.", "🔥 Zuko/Mai: no Fire Nation Soldier on the field to receive +1/+1.");
+        this.logMessage("🔥 Bullseye/Elektra: nenhum HYDRA Troopers em campo para receber +1/+1.", "🔥 Bullseye/Elektra: no HYDRA Troopers on the field to receive +1/+1.");
       }
     } else if (soldierBuffTriggers > 0 && !hasValidAttacker) {
-      this.logMessage("🔥 Zuko/Mai: sem ataque válido de lacaio neste turno (recém-invocados não atacam).", "🔥 Zuko/Mai: no valid minion attacker this turn (newly summoned ones cannot attack).");
+      this.logMessage("🔥 Bullseye/Elektra: sem ataque válido de lacaio neste turno (recém-invocados não atacam).", "🔥 Bullseye/Elektra: no valid minion attacker this turn (newly summoned ones cannot attack).");
     }
 
     // Ao final da ação dos chefes, o turno deles acaba e a contagem avança para o PRÓXIMO turno dos jogadores.
@@ -1028,7 +1040,7 @@ const GameEngine = {
       if (this.heroesLife === 0) {
         this.isGameOver = true;
         this.isVictory = false;
-        this.logMessage("💀 GAME OVER! Os heróis foram derrotados pela Nação do Fogo!", "💀 GAME OVER! The heroes were defeated by the Fire Nation!");
+        this.logMessage("💀 GAME OVER! Os heróis foram derrotados pela Hydra!", "💀 GAME OVER! The heroes were defeated by the Hydra!");
       }
     } else {
       this.bossesLife = Math.max(0, this.bossesLife + amount);
@@ -1424,15 +1436,6 @@ function ensureArtModal() {
         transform: none;
       }
     }
-    #card-art-modal .art-modal-actions {
-      display: none;
-      gap: 10px;
-      padding: 12px;
-      border-top: 1px solid rgba(255,255,255,0.08);
-    }
-    #card-art-modal .art-modal-actions button {
-      flex: 1;
-    }
   `;
   document.head.appendChild(style);
 
@@ -1452,8 +1455,6 @@ function ensureArtModal() {
 }
 
 let currentArtModalCardId = null;
-let currentArtModalCanEdit = false;
-
 function openCardArtModal(cardId, allowEdit = false) {
   const card = findCardById(cardId);
   if (!card) return;
@@ -1461,7 +1462,6 @@ function openCardArtModal(cardId, allowEdit = false) {
   const custom = CustomizationStore.get(card.id) || {};
 
   currentArtModalCardId = cardId;
-  currentArtModalCanEdit = !!allowEdit;
   const modal = ensureArtModal();
   const cardWrapEl = document.getElementById('card-art-modal-card');
   if (cardWrapEl) {
@@ -1478,12 +1478,6 @@ function openCardArtModal(cardId, allowEdit = false) {
 function closeCardArtModal() {
   const modal = document.getElementById('card-art-modal');
   if (modal) modal.style.display = 'none';
-}
-
-function openCardCustomizerFromArtModal() {
-  if (!currentArtModalCardId || !currentArtModalCanEdit) return;
-  closeCardArtModal();
-  openCardCustomizer(currentArtModalCardId);
 }
 
 // ── UI CONTROLLER & VIEW BINDINGS ──
@@ -1611,7 +1605,7 @@ function updateUI() {
         div.style.background = 'rgba(225, 29, 72, 0.15)';
         div.style.border = '1px solid var(--fire-primary)';
         div.style.color = 'var(--fire-primary)';
-        div.innerHTML = currentLang === 'en' ? '💀 HERO DEFEAT! The world will fall to the Fire Nation.' : '💀 DERROTA DOS HERÓIS! O mundo sucumbirá à Nação do Fogo.';
+        div.innerHTML = currentLang === 'en' ? '💀 HERO DEFEAT! The world will fall to the Hydra.' : '💀 DERROTA DOS HERÓIS! O mundo sucumbirá à Hydra.';
       }
       logEl.appendChild(div);
       logEl.scrollTop = logEl.scrollHeight;
@@ -1964,7 +1958,7 @@ async function exportCustomizations() {
   };
   const jsonText = JSON.stringify(payload, null, 2);
   const date = new Date().toISOString().slice(0, 10);
-  const fileName = `avatar-teamup-customizations-${date}.json`;
+  const fileName = `marvel-teamup-customizations-${date}.json`;
 
   // Caminho principal: seletor nativo de arquivo (mais confiável no Chrome/Edge).
   if (window.showSaveFilePicker) {
@@ -2039,6 +2033,20 @@ function importCustomizations(event) {
 // ── GALERIA DE CARTAS RENDERING ──
 
 let currentFilter = 'all';
+
+function getCardsForGalleryFilter(filter = 'all') {
+  let cards = [];
+  if (filter === 'all' || filter === 'bosses') {
+    cards = cards.concat(CARD_DATABASE.bosses);
+  }
+  if (filter === 'all' || filter === 'minions') {
+    cards = cards.concat(CARD_DATABASE.minions);
+  }
+  if (filter === 'all' || filter === 'tactics') {
+    cards = cards.concat(CARD_DATABASE.events);
+  }
+  return cards;
+}
 
 const MobileApp = {
   view: 'home',
@@ -2129,10 +2137,10 @@ function getFinalPT(card, isBattlefield = false) {
 function getMobileText(key) {
   const copy = {
     en: {
-      kicker: 'MTG Companion app fan',
-      titleTop: 'TEAM UP',
-      titleBottom: 'COOP',
-      subtitle: 'MTG Companion app fan - Team Up Coop',
+      kicker: 'Marvel Team-Up fan app',
+      titleTop: 'MARVEL',
+      titleBottom: 'TEAM-UP',
+      subtitle: 'Marvel Team-Up Coop Companion',
       selectPlayers: 'Select Players',
       players: 'Players',
       heroes: 'Heroes',
@@ -2162,10 +2170,10 @@ function getMobileText(key) {
       noCards: 'No cards found.'
     },
     pt: {
-      kicker: 'MTG Companion app fan',
-      titleTop: 'TEAM UP',
-      titleBottom: 'COOP',
-      subtitle: 'MTG Companion app fan - Team Up Coop',
+      kicker: 'Marvel Team-Up fan app',
+      titleTop: 'MARVEL',
+      titleBottom: 'TEAM-UP',
+      subtitle: 'Marvel Team-Up Coop Companion',
       selectPlayers: 'Selecionar Jogadores',
       players: 'Jogadores',
       heroes: 'Herois',
@@ -2461,7 +2469,6 @@ function mobileRenderGalleryCard(card) {
         <p>${rules}</p>
         <div class="detail-actions">
           <button type="button" onclick="openCardArtModal('${card.id}', true)">${getMobileText('viewCard')}</button>
-          <button type="button" onclick="openCardCustomizer('${card.id}')">${getMobileText('edit')}</button>
         </div>
       </div>
     </article>
@@ -2521,7 +2528,9 @@ function renderMobileApp() {
 function renderCardGallery(filter = 'all') {
   currentFilter = filter;
   const grid = document.getElementById('gallery-cards-grid');
-  if (!grid) return;
+  if (!grid) {
+    return;
+  }
 
   // Active filters buttons
   document.querySelectorAll('.gallery-filters button').forEach(btn => {
@@ -2530,16 +2539,7 @@ function renderCardGallery(filter = 'all') {
   const activeFilterBtn = document.getElementById(`filter-${filter}`);
   if (activeFilterBtn) activeFilterBtn.classList.add('active');
 
-  let cards = [];
-  if (filter === 'all' || filter === 'bosses') {
-    cards = cards.concat(CARD_DATABASE.bosses);
-  }
-  if (filter === 'all' || filter === 'minions') {
-    cards = cards.concat(CARD_DATABASE.minions);
-  }
-  if (filter === 'all' || filter === 'tactics') {
-    cards = cards.concat(CARD_DATABASE.events);
-  }
+  const cards = getCardsForGalleryFilter(filter);
 
   grid.innerHTML = cards.map(c => renderVirtualCard(c, false, true)).join('');
 
@@ -2557,7 +2557,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 1. Initial setup of Game state machine (2 players by default)
   GameEngine.setupGame(2);
   if (typeof applyTranslations === 'function') applyTranslations();
-  GameEngine.logMessage(`👾 Companion carregado. Clique em 'Próximo Turno' ou compre cartas para começar!`, `👾 Companion loaded. Click 'Next Turn' or draw cards to start!`);
+  GameEngine.logMessage(`👾 Marvel Companion carregado. Clique em 'Próximo Turno' ou compre cartas para começar!`, `👾 Marvel Companion loaded. Click 'Next Turn' or draw cards to start!`);
   updateUI();
 
   // 2. Setup Card Gallery
@@ -2628,7 +2628,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function applyAutomatedEventEffects(engine, card, contextLabel = "") {
     if (!engine || !card) return false;
 
-    // Decreto Imperial de Ozai:
+    // Hour of Defeat:
     // Se houver lacaios no descarte/cemitério, retorna aleatoriamente até 2 ao campo de batalha.
     if (card.id === "ozai_decree") {
       const graveyard = Array.isArray(engine.eventGraveyard) ? engine.eventGraveyard : [];
@@ -2655,21 +2655,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (typeof engine.logMessage === "function") {
           const names = selected.map(c => (currentLang === 'en' && c.nameEn) ? c.nameEn : c.name).join(", ");
-          engine.logMessage(`♻️ Decreto Imperial de Ozai${contextLabel}: ${selected.length} lacaio(s) retornaram do descarte ao campo (${names}).`, `♻️ Ozai's Imperial Decree${contextLabel}: ${selected.length} minion(s) returned from the discard pile to the battlefield (${names}).`);
+          engine.logMessage(`♻️ Hour of Defeat${contextLabel}: ${selected.length} lacaio(s) retornaram do descarte ao campo (${names}).`, `♻️ Hour of Defeat${contextLabel}: ${selected.length} minion(s) returned from the discard pile to the battlefield (${names}).`);
         }
       } else if (typeof engine.logMessage === "function") {
-        engine.logMessage(`♻️ Decreto Imperial de Ozai${contextLabel}: nenhum lacaio no descarte para retornar.`, `♻️ Ozai's Imperial Decree${contextLabel}: no minion in discard pile to return.`);
+        engine.logMessage(`♻️ Hour of Defeat${contextLabel}: nenhum lacaio no descarte para retornar.`, `♻️ Hour of Defeat${contextLabel}: no minion in discard pile to return.`);
       }
       return true;
     }
 
-    // Infiltração de Azula:
+    // Villainous Hideout:
     // Heróis perdem 3 de vida e chefes ganham 3 de vida.
     if (card.id === "azula_infiltration") {
       engine.heroesLife = Math.max(0, (engine.heroesLife || 0) - 3);
       engine.bossesLife = (engine.bossesLife || 0) + 3;
       if (typeof engine.logMessage === "function") {
-        engine.logMessage(`🕵️ Infiltração de Azula${contextLabel}: heróis perdem 3 de vida e chefes ganham 3 de vida.`, `🕵️ Azula's Infiltration${contextLabel}: heroes lose 3 life and bosses gain 3 life.`);
+        engine.logMessage(`🕵️ Villainous Hideout${contextLabel}: herois perdem 3 de vida e chefes ganham 3 de vida.`, `🕵️ Villainous Hideout${contextLabel}: heroes lose 3 life and bosses gain 3 life.`);
       }
       return true;
     }
@@ -2733,7 +2733,7 @@ document.addEventListener('DOMContentLoaded', () => {
 })();
 
 // ================================================================
-// HOTFIX: Efeito passivo do Ozai
+// HOTFIX: Efeito passivo do Baron Strucker
 // "Sempre que uma criatura que os chefes controlam morrer, os heróis perdem 1 de vida."
 // ================================================================
 (() => {
@@ -2755,7 +2755,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     this.heroesLife = Math.max(0, (this.heroesLife || 0) - 1);
     if (typeof this.logMessage === "function") {
-      this.logMessage("👑 Ozai ativo: um lacaio morreu, heróis perdem 1 ponto de vida.", "👑 Ozai active: a minion died, heroes lose 1 life point.");
+      this.logMessage("👑 Baron Strucker ativo: um lacaio morreu, herois perdem 1 ponto de vida.", "👑 Baron Strucker active: a minion died, heroes lose 1 life point.");
     }
 
     return out;
@@ -2810,7 +2810,7 @@ document.addEventListener('DOMContentLoaded', () => {
 })();
 
 // ================================================================
-// HOTFIX: Efeito de entrada da Hama
+// HOTFIX: Efeito de entrada do Killmonger
 // "Quando esta carta entrar, os chefes ganham 5 pontos de vida para cada chefe em jogo."
 // ================================================================
 (() => {
@@ -2818,7 +2818,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (GameEngine.__hamaEntryHookApplied) return;
   GameEngine.__hamaEntryHookApplied = true;
 
-  function applyHamaEntryEffect(engine) {
+  function applyKillmongerEntryEffect(engine) {
     if (!engine || !Array.isArray(engine.activeBosses) || engine.activeBosses.length === 0) return;
 
     engine.activeBosses.forEach((boss) => {
@@ -2831,7 +2831,7 @@ document.addEventListener('DOMContentLoaded', () => {
       boss.__hamaEntryApplied = true;
 
       if (typeof engine.logMessage === "function") {
-        engine.logMessage(`🌕 Hama entrou: chefes ganham ${lifeGain} de vida (${bossesInPlay} chefe(s) em jogo).`, `🌕 Hama entered: bosses gain ${lifeGain} life (${bossesInPlay} boss(es) in play).`);
+        engine.logMessage(`🌕 Killmonger entrou: chefes ganham ${lifeGain} de vida (${bossesInPlay} chefe(s) em jogo).`, `🌕 Killmonger entered: bosses gain ${lifeGain} life (${bossesInPlay} boss(es) in play).`);
       }
     });
   }
@@ -2840,7 +2840,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const _setupGame = GameEngine.setupGame.bind(GameEngine);
     GameEngine.setupGame = function(players = 2) {
       const out = _setupGame(players);
-      applyHamaEntryEffect(this);
+      applyKillmongerEntryEffect(this);
       return out;
     };
   }
@@ -2849,14 +2849,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const _nextStage = GameEngine.nextStage.bind(GameEngine);
     GameEngine.nextStage = function() {
       const out = _nextStage();
-      applyHamaEntryEffect(this);
+      applyKillmongerEntryEffect(this);
       return out;
     };
   } else if (typeof GameEngine.advanceBossStage === "function") {
     const _advanceBossStage = GameEngine.advanceBossStage.bind(GameEngine);
     GameEngine.advanceBossStage = function() {
       const out = _advanceBossStage();
-      applyHamaEntryEffect(this);
+      applyKillmongerEntryEffect(this);
       return out;
     };
   }

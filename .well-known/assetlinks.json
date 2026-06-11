@@ -1,8 +1,8 @@
 [{
-      "relation": ["delegate_permission/common.handle_all_urls"],
-      "target": {
-        "namespace": "android_app",
-        "package_name": "com.tronicbsb.teamupcoop",
-        "sha256_cert_fingerprints": ["B2:F1:8A:76:ED:14:94:4C:00:E1:C7:BB:A2:73:DD:08:DA:91:AA:4C:1D:08:B9:B0:5E:E7:38:79:C2:5E:2D:63"]
-      }
-    }]
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.tronicbsb.marvelteamup",
+    "sha256_cert_fingerprints": ["E6:18:56:DE:7B:D1:32:3D:D2:68:C5:50:93:C0:19:3F:F9:1E:AE:A8:79:CF:D8:38:BC:3B:15:38:5C:3E:72:1C"]
+  }
+}]

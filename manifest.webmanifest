@@ -1,14 +1,14 @@
 {
   "id": "./",
-  "name": "MTG Companion app fan - Team Up Coop",
-  "short_name": "Team Up Coop",
-  "description": "Companion fan app para partidas cooperativas de mesa, com controle de vida, bosses, cartas reveladas, lacaios em combate, log e galeria de cartas.",
+  "name": "Marvel Team-Up Coop Companion",
+  "short_name": "Marvel Team-Up",
+  "description": "Companion fan app Marvel para partidas cooperativas de mesa, com controle de vida, boss deck, cartas reveladas, lacaios em combate, log e galeria editavel de cartas.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait-primary",
   "background_color": "#111118",
-  "theme_color": "#e11d48",
+  "theme_color": "#143b7d",
   "categories": ["games", "entertainment", "utilities"],
   "lang": "pt-BR",
   "icons": [
