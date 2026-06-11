@@ -821,13 +821,13 @@ const GameEngine = {
       this.activeBosses = this.bossDeck.splice(0, 1);
     }
     
-    // 2. Criar e Embaralhar Event Deck (27 cartas conforme as regras oficiais TMNT/Avatar Team-Up)
+    // 2. Criar e Embaralhar Event Deck (27 cartas conforme as regras oficiais Marvel Team-Up)
     //    DB tem 14 táticas: 11 de boss específicas + Emboscada + Bombardeio + Ressurgimento (1 cópia cada)
     //    + cópias extras abaixo para atingir os totais corretos:
     //    - 11x Táticas de boss (1 cada): combustion, zuko, ty_lee, azula, zhao, hama, long_feng, mai, sozin, ozai, jet
     //    - 2x HYDRA Infiltration (Villain Infiltration) -> 1 no DB + 1 extra abaixo
     //    - 3x Cruel Alliance (Villain Mayhem) -> 1 no DB + 2 extras abaixo
-    //    - 1x Ressurgimento Imperial (Villain Scheme) → 1 no DB
+    //    - 1x Decoy Ploy (Villain Scheme) → 1 no DB
     //    Total táticas: 14 (do forEach) + 1 + 2 = 17
     //    - 5x HYDRA Troopers (Foot Disciple)
     //    - 3x Ninja of the Hand (Foot Skirmisher)
@@ -1095,7 +1095,7 @@ const GameEngine = {
     this.eventGraveyard = [];
     
     const total = cardsToReturn.length;
-    this.logMessage(`🔄 Ressurgimento Imperial! ${total} cartas do cemitério + descarte ativo foram reembaralhadas de volta no Event Deck! (Deck agora tem ${this.eventDeck.length} cartas)`, `🔄 Imperial Resurgence! ${total} cards from the graveyard + active discard were reshuffled into the Event Deck! (Deck now has ${this.eventDeck.length} cards)`);
+    this.logMessage(`🔄 Decoy Ploy! ${total} cartas do cemitério + descarte ativo foram reembaralhadas de volta no Event Deck! (Deck agora tem ${this.eventDeck.length} cartas)`, `🔄 Decoy Ploy! ${total} cards from the graveyard + active discard were reshuffled into the Event Deck! (Deck now has ${this.eventDeck.length} cards)`);
     
     // Força atualização visual imediata dos contadores
     if (typeof updateUI === 'function') updateUI();
@@ -2803,7 +2803,7 @@ document.addEventListener('DOMContentLoaded', () => {
       this.eventDeck.push(...toReturn);
       if (typeof this.shuffleArray === "function") this.shuffleArray(this.eventDeck);
       if (typeof this.logMessage === "function") {
-        this.logMessage(`🔁 Ordem aplicada: ${toReturn.length} evento(s) anterior(es) ao Ressurgimento voltaram ao Event Deck.`, `🔁 Order applied: ${toReturn.length} event(s) prior to Resurgence returned to the Event Deck.`);
+        this.logMessage(`🔁 Ordem aplicada: ${toReturn.length} evento(s) anterior(es) ao Decoy Ploy voltaram ao Event Deck.`, `🔁 Order applied: ${toReturn.length} event(s) prior to Decoy Ploy returned to the Event Deck.`);
       }
     }
   };
